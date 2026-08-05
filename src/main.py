@@ -104,3 +104,113 @@ def convert_matrix(match):
         "\\end{bmatrix}\n"
         "$$"
     )
+# -------------------------------------------------
+# Equation formatter
+# -------------------------------------------------
+
+def fix_equations(text):
+
+    replacements = {
+
+        "tr(": r"\mathrm{tr}(",
+        "det(": r"\mathrm{det}(",
+        "rank(": r"\mathrm{rank}(",
+        "adj(": r"\mathrm{adj}(",
+
+        "Aᵀ": r"A^{T}",
+        "Bᵀ": r"B^{T}",
+        "A⁻¹": r"A^{-1}",
+        "B⁻¹": r"B^{-1}",
+
+        "|A|": r"\det(A)",
+        "|B|": r"\det(B)",
+
+        "A²": r"A^2",
+        "A³": r"A^3",
+        "A⁴": r"A^4",
+        "A⁵": r"A^5",
+
+        "B²": r"B^2",
+        "B³": r"B^3",
+
+        "Iₙ": r"I_n",
+
+    }
+
+    for old, new in replacements.items():
+        text = text.replace(old, new)
+
+    return text
+
+
+# -------------------------------------------------
+# Matrix conversion
+# -------------------------------------------------
+
+def convert_all_matrices(text):
+
+    return MATRIX_PATTERN.sub(convert_matrix, text)
+
+
+# -------------------------------------------------
+# Complete formatter
+# -------------------------------------------------
+
+def format_document(text):
+
+    text = replace_unicode(text)
+
+    text = fix_operatorname(text)
+
+    text = fix_equations(text)
+
+    text = convert_all_matrices(text)
+
+    return text
+
+
+# -------------------------------------------------
+# Process one markdown file
+# -------------------------------------------------
+
+def process_file(path):
+
+    with open(path, "r", encoding="utf-8") as f:
+
+        data = f.read()
+
+    formatted = format_document(data)
+
+    out_file = OUTPUT_DIR / path.name
+
+    with open(out_file, "w", encoding="utf-8") as f:
+
+        f.write(formatted)
+
+    print(f"✓ {path.name}")
+
+
+# -------------------------------------------------
+# Main
+# -------------------------------------------------
+
+def main():
+
+    files = list(INPUT_DIR.glob("*.md"))
+
+    if not files:
+
+        print("No markdown files found.")
+
+        return
+
+    for file in files:
+
+        process_file(file)
+
+    print("\nFormatting Complete.")
+
+
+if __name__ == "__main__":
+
+    main()
