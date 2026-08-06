@@ -90,18 +90,17 @@ if __name__ == "__main__":
 
     question = """
     ### Question
+ 
+    Let
+    $$
+    A=
+    \begin{bmatrix}
+    2 & -1\\
+    3 & 4
+    \end{bmatrix}
+    $$
 
-Let
-
-$$
-A=
-\begin{bmatrix}
-2 & -1\\
-3 & 4
-\end{bmatrix}
-$$
-
-Find the trace.
+    Find the trace.
 
 **Correct Answer:** 6
 
