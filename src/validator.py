@@ -1,5 +1,17 @@
 import re
+def split_questions(text):
+    """
+    Split a markdown document into individual questions.
+    """
+    pattern = r"(?=^##\s+[A-Z]{2}-[A-Z]{3}-\d{3})"
 
+    questions = re.split(
+        pattern,
+        text,
+        flags=re.MULTILINE
+    )
+
+    return [q.strip() for q in questions if q.strip()]
 def validate(text):
     errors = []
 
