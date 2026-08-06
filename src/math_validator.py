@@ -21,7 +21,17 @@ def extract_matrix(question):
     
     rows = matrix_text.split("\\\\")
 
-    return rows
+    cleaned = []
+
+for row in rows:
+
+    row = row.strip()
+
+    values = row.split("&")
+
+    cleaned.append(values)
+
+return cleaned
 
 if __name__ == "__main__":
 
