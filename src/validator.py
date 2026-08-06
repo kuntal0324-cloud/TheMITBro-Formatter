@@ -51,7 +51,32 @@ def validate(text):
             errors.append(
                f"{qid.group(1)}: Invalid MCQ options ({options})"
         ) 
+    # -------------------------------------------------
+    # Correct Answer Validation
+    # -------------------------------------------------
 
+         answer = re.search(
+             r"\*\*Correct Answer:\*\*\s*(.+)",
+             question
+         )
+
+         if answer:
+
+             value = answer.group(1).strip()
+
+         if "**Type:** MCQ" in question:
+
+              if value not in ["A", "B", "C", "D"]:
+                 errors.append(
+                 f"{qid.group(1)}: Invalid MCQ answer ({value})"
+            )
+
+         elif "**Type:** NAT" in question:
+
+              if not re.fullmatch(r"-?\d+(\.\d+)?", value):
+                  errors.append(
+                  f"{qid.group(1)}: Invalid NAT answer ({value})"
+            )
     # -------------------------------------------------
     # Duplicate Question IDs
     # -------------------------------------------------
