@@ -22,14 +22,22 @@ def extract_matrix(question):
     rows = matrix_text.split("\\\\")
 
     cleaned = []
-
+    
     for row in rows:
 
         row = row.strip()
 
         values = row.split("&")
 
-        cleaned.append(values)
+        numbers = []
+
+     for value in values:
+
+         value = value.strip()
+
+         numbers.append(int(value))
+
+      cleaned.append(numbers)
 
     return cleaned
 
