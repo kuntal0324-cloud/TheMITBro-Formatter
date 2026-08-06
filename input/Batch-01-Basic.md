@@ -249,7 +249,7 @@ $$
 
 Find the sum of all elements of \(A^2\).
 
-**Correct Answer:** 54
+**Correct Answer:** 46
 
 ### Solution
 
@@ -453,7 +453,7 @@ $$
 \mathrm{tr}(A^3).
 $$
 
-**Correct Answer:** 28
+**Correct Answer:** 26
 
 ### Solution
 
