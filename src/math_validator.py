@@ -31,15 +31,15 @@ def extract_matrix(question):
 
         numbers = []
 
-    for value in values:
+        for value in values:
 
-         value = value.strip()
+            value = value.strip()
 
-         numbers.append(int(value))
+            numbers.append(int(value))
 
-         cleaned.append(numbers)
+        cleaned.append(numbers)
 
- return cleaned
+     return cleaned
 
 if __name__ == "__main__":
 
