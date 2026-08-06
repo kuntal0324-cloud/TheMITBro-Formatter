@@ -15,6 +15,7 @@ def split_questions(text):
 def validate(text):
     errors = []
     questions = split_questions(text)
+    
     for question in questions:
 
     qid = re.search(
