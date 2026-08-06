@@ -278,8 +278,6 @@ Therefore,
 **Tags:** NAT, Matrix Powers
 
 ---
----
-
 ## LA-MAT-006
 
 **Difficulty:** Medium  
@@ -624,9 +622,6 @@ $$
 **Tags:** Matrix Identities
 
 ---
-
----
-
 ## LA-MAT-011
 
 **Difficulty:** Medium  
@@ -708,13 +703,13 @@ D. \(-10\)
 For a \(2\times2\) matrix,
 
 $$
-\\mathrm{det}(A)=ad-bc.
+\mathrm{det}(A)=ad-bc.
 $$
 
 Hence,
 
 $$
-\\mathrm{det}(A)=1(4)-2(3)=4-6=-2.
+\mathrm{det}(A)=1(4)-2(3)=4-6=-2.
 $$
 
 **Concept Tested:** Determinant of a \(2\times2\) matrix.
@@ -870,9 +865,6 @@ Hence, it is a square matrix.
 **Tags:** Square Matrix
 
 ---
-
----
-
 ## LA-MAT-016
 
 **Difficulty:** Medium
@@ -907,7 +899,7 @@ D. Idempotent
 ### Solution
 
 \[
-\\mathrm{det}(A)=4\times3-2\times6=12-12=0.
+\mathrm{det}(A)=4\times3-2\times6=12-12=0.
 \]
 
 Since the determinant is zero, the matrix is singular.
@@ -983,7 +975,7 @@ $$
 then
 
 \[
-\\mathrm{det}(A)
+\mathrm{det}(A)
 \]
 
 is
@@ -1003,7 +995,7 @@ D. 4
 For a diagonal matrix,
 
 \[
-\\mathrm{det}(A)
+\mathrm{det}(A)
 \]
 
 is the product of the diagonal elements.
@@ -1077,13 +1069,13 @@ the matrix is symmetric.
 Let \(A\) be a \(2\times2\) matrix such that
 
 \[
-\\mathrm{det}(A)=5.
+\mathrm{det}(A)=5.
 \]
 
 Find
 
 \[
-\\mathrm{det}(3A).
+\mathrm{det}(3A).
 \]
 
 A. 9
@@ -1101,7 +1093,7 @@ D. 90
 For an \(n\times n\) matrix,
 
 \[
-\\mathrm{det}(kA)=k^n\\mathrm{det}(A).
+\mathrm{det}(kA)=k^n\mathrm{det}(A).
 \]
 
 Here,
@@ -1113,7 +1105,7 @@ n=2.
 Therefore,
 
 \[
-\\mathrm{det}(3A)=3^2\times5=45.
+\mathrm{det}(3A)=3^2\times5=45.
 \]
 
 **Concept Tested:** Scaling property of determinants.
@@ -1121,4 +1113,3 @@ Therefore,
 **Tags:** Determinant Properties
 
 ---
-
