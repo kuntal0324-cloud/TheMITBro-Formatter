@@ -923,7 +923,7 @@ Since the determinant is zero, the matrix is singular.
 
 ### Question
 
-Matrix \(A\) is of order \(2\times3\) and matrix \(B\) is of order \(3\times2\).
+Matrix \(A\) is of order $$\(2\times3\)$$ and matrix \(B\) is of order $$\(3\times2\)$$.
 
 The order of the product \(AB\) is
 
