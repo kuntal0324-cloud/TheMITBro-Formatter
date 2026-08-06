@@ -22,7 +22,7 @@ def validate(text):
         question)
 
         if not qid:
-        continue
+           continue
 
         required_sections = [
         "### Question",
@@ -33,8 +33,8 @@ def validate(text):
         ]
 
         for section in required_sections:
-        if section not in question:
-        errors.append(f"{qid.group(1)}: Missing {section}")
+            if section not in question:
+               errors.append(f"{qid.group(1)}: Missing {section}")
 
     # -------------------------------------------------
     # Duplicate Question IDs
