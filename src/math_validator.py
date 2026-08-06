@@ -115,3 +115,4 @@ if __name__ == "__main__":
     print("Det:", determinant(matrix))
     print("Answer:", extract_answer(question))
     print("Verify:", verify(question))
+    print("Topic:", extract_topic(question))
