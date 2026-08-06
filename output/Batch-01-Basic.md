@@ -915,7 +915,7 @@ Since the determinant is zero, the matrix is singular.
 
 ### Question
 
-Matrix \(A\) is of order \($\(2\times3\)\)\( and matrix \(B\) is of order \)\(\(3\times2\)\)$.
+Matrix \(A\) is of order $$\(2\times3\)$$ and matrix \(B\) is of order $$\(3\times2\)$$.
 
 The order of the product \(AB\) is
 
@@ -1078,7 +1078,7 @@ the matrix is symmetric.
 
 ### Question
 
-Let \(A\) be a \($\(2\times2\)\)$ matrix such that
+Let \(A\) be a $$\(2\times2\)$$ matrix such that
 
 $$
 \mathrm{det}(A)=5.
