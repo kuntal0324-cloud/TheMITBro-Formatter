@@ -14,6 +14,7 @@ TOPIC_DETERMINANT = "Determinant"
 
 def trace(matrix):
     return Matrix(matrix).trace()
+    
 
 def determinant(matrix):
     return Matrix(matrix).det()
@@ -24,17 +25,21 @@ def matrix_power(matrix, power):
 def multiply(A, B):
     return Matrix(A) * Matrix(B)
 
+# -----------------------------------
+# Parsers
+# -----------------------------------
+
 def extract_topic(question):
 
-        match = re.search(
-            r"\*\*Concept Tested:\*\*\s*(.+)",
-            question
-        )
+    match = re.search(
+         r"\*\*Concept Tested:\*\*\s*(.+)",
+         question
+     )
 
-        if not match:
-            return None
+     if not match:
+         return None
 
-        return match.group(1).strip()
+     return match.group(1).strip()
     
 def extract_answer(question):
     
@@ -83,6 +88,10 @@ def extract_matrix(question):
 
     return cleaned
 
+# -----------------------------------
+# Generic Verifier
+# -----------------------------------
+
 def verify_numeric(question, solver):
 
     matrix = extract_matrix(question)
@@ -95,6 +104,10 @@ def verify_numeric(question, solver):
     computed = solver(matrix)
 
     return computed == int(expected)
+
+# -----------------------------------
+# Topic Verifiers
+# -----------------------------------
 
 def verify_trace(question):
 
@@ -119,6 +132,10 @@ def verify(question):
         return None
 
     return verifier(question)
+
+# -----------------------------------
+# Testing
+# -----------------------------------
     
 if __name__ == "__main__":
 
