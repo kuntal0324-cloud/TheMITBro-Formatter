@@ -35,12 +35,38 @@ def validate_duplicate_ids(text):
 
     return errors
 
+def validate_question_sequence(text):
+
+    errors = []
+
+    question_ids = re.findall(
+        r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
+        text
+    )
+
+    numbers = []
+
+    for qid in question_ids:
+        numbers.append(int(qid.split("-")[-1]))
+
+    for i in range(len(numbers) - 1):
+
+        expected = numbers[i] + 1
+
+        if numbers[i + 1] != expected:
+            errors.append(
+                f"Question IDs out of sequence: {numbers[i]:03d} -> {numbers[i+1]:03d}"
+            )
+
+    return errors
+
 def validate(text):
     errors = []
     
     questions = split_questions(text)
 
     errors.extend(validate_duplicate_ids(text))
+    errors.extend(validate_question_sequence(text))
     
     for question in questions:
         qid = re.search(r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
@@ -115,25 +141,27 @@ def validate(text):
     if text.count("$$") % 2 != 0:
         errors.append("Unmatched $$ display math block.")
 
-    # -------------------------------------------------
-    # Question ID sequence validation
-    # -------------------------------------------------
+    def validate_question_sequence(text):
 
-    numbers = []
+        errors = []
 
-    for qid in question_ids:
+        question_ids = re.findall(
+            r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
+            text
+        )
 
-        number = int(qid.split("-")[-1])
+        numbers = []
 
-        numbers.append(number)
+        for qid in question_ids:
+            numbers.append(int(qid.split("-")[-1]))
 
-    for i in range(len(numbers) - 1):
+        for i in range(len(numbers) - 1):
 
-        expected = numbers[i] + 1
+            expected = numbers[i] + 1
 
-        if numbers[i + 1] != expected:
+            if numbers[i + 1] != expected:
+                errors.append(
+                    f"Question IDs out of sequence: {numbers[i]:03d} -> {numbers[i+1]:03d}"
+                )
 
-            errors.append(
-                f"Question IDs out of sequence: {numbers[i]:03d} -> {numbers[i+1]:03d}"
-            )
     return errors
