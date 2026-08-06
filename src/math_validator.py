@@ -18,7 +18,6 @@ def extract_matrix(question):
         return None
 
 matrix_text = match.group(1)
-
 rows = matrix_text.split("\\\\")
 
 return rows
