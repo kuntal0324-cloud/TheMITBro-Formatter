@@ -23,15 +23,15 @@ def extract_matrix(question):
 
     cleaned = []
 
-for row in rows:
+    for row in rows:
 
-    row = row.strip()
+        row = row.strip()
 
-    values = row.split("&")
+        values = row.split("&")
 
-    cleaned.append(values)
+        cleaned.append(values)
 
-return cleaned
+    return cleaned
 
 if __name__ == "__main__":
 
