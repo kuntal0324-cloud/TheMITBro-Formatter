@@ -1,12 +1,10 @@
 name: TheMITBro Formatter
-
 on:
   push:
-    paths:
-      - "input/**"
-      - "src/**"
-      - ".github/workflows/formatter.yml"
+    branches:
+      - main
 
+  workflow_dispatch:
 jobs:
   format:
     runs-on: ubuntu-latest
