@@ -36,6 +36,7 @@ def extract_answer(question):
         return None
 
     return match.group(1).strip()
+    
 def extract_matrix(question):
 
     match = re.search(
@@ -101,13 +102,12 @@ def verify(question):
 
     topic = extract_topic(question)
 
-    if topic == "Matrix Trace":
-        return verify_trace(question)
+    verifier = VERIFIERS.get(topic)
 
-    elif topic == "Determinant":
-        return verify_determinant(question)
+    if verifier is None:
+        return None
 
-    return None
+    return verifier(question)
     
 if __name__ == "__main__":
 
