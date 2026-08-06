@@ -60,6 +60,37 @@ def validate_question_sequence(text):
 
     return errors
 
+def validate_required_sections(questions):
+
+    errors = []
+
+    required_sections = [
+        "### Question",
+        "**Correct Answer:**",
+        "### Solution",
+        "**Concept Tested:**",
+        "**Tags:**"
+    ]
+
+    for question in questions:
+
+        qid = re.search(
+            r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
+            question
+        )
+
+        if not qid:
+            continue
+
+        for section in required_sections:
+
+            if section not in question:
+                errors.append(
+                    f"{qid.group(1)}: Missing {section}"
+                )
+
+    return errors
+
 def validate(text):
     errors = []
     
@@ -67,25 +98,8 @@ def validate(text):
 
     errors.extend(validate_duplicate_ids(text))
     errors.extend(validate_question_sequence(text))
-    
-    for question in questions:
-        qid = re.search(r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
-        question)
+    errors.extend(validate_required_sections(questions))
 
-        if not qid:
-           continue
-
-        required_sections = [
-        "### Question",
-        "**Correct Answer:**",
-        "### Solution",
-        "**Concept Tested:**",
-        "**Tags:**"
-        ]
-
-        for section in required_sections:
-            if section not in question:
-               errors.append(f"{qid.group(1)}: Missing {section}")
     # -------------------------------------------------
     # MCQ Option Validation
     # -------------------------------------------------
