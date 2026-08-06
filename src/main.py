@@ -1,4 +1,5 @@
 from latex_converter import latex_cleanup
+from validator import validate
 
 import os
 import re
@@ -189,6 +190,13 @@ def process_file(path):
     formatted = re.sub(r"(?:\n---\s*){2,}", "\n---\n", formatted)
     formatted = re.sub(r"\\{2}mathrm", r"\\mathrm", formatted)
     formatted = formatted.rstrip() + "\n"
+    # Phase-3 Validation
+errors = validate(formatted)
+
+if errors:
+    print(f"\nErrors found in {path.name}:")
+    for err in errors:
+        print(" -", err)
 
     out_file = OUTPUT_DIR / path.name
 
