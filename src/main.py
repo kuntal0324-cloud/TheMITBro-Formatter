@@ -190,8 +190,9 @@ def process_file(path):
     formatted = re.sub(r"(?:\n---\s*){2,}", "\n---\n", formatted)
     formatted = re.sub(r"\\{2}mathrm", r"\\mathrm", formatted)
     formatted = formatted.rstrip() + "\n"
+    
     # Phase-3 Validation
-errors = validate(formatted)
+    errors = validate(formatted)
 
 if errors:
     print(f"\nErrors found in {path.name}:")
