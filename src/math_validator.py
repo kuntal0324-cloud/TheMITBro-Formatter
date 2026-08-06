@@ -82,6 +82,20 @@ def verify_trace(question):
     computed = trace(matrix)
 
     return computed == int(expected)
+
+def verify_determinant(question):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_answer(question)
+
+    if expected is None:
+        return False
+
+    computed = determinant(matrix)
+
+    return computed == int(expected)
+    
 def verify(question):
 
     topic = extract_topic(question)
@@ -89,28 +103,32 @@ def verify(question):
     if topic == "Matrix Trace":
         return verify_trace(question)
 
+    elif topic == "Determinant":
+        return verify_determinant(question)
+
     return None
+    
 if __name__ == "__main__":
 
     question = """
-    ### Question
+### Question
 
-    Let
+Let
 
-    $$
-    A=
-    \\begin{bmatrix}
-    2 & -1\\\\
-    3 & 4
-    \\end{bmatrix}
-    $$
+$$
+A=
+\\begin{bmatrix}
+2 & -1\\\\
+3 & 4
+\\end{bmatrix}
+$$
 
-    Find the trace.
+Find the determinant.
 
-    **Correct Answer:** 6
+**Correct Answer:** 11
 
-    **Concept Tested:** Matrix Trace
-    """
+**Concept Tested:** Determinant
+"""
 
     matrix = extract_matrix(question)
 
