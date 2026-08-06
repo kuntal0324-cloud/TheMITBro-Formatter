@@ -193,8 +193,7 @@ def process_file(path):
     
     # Phase-3 Validation
     errors = validate(formatted)
-
-if errors:
+    if errors:
     print(f"\nErrors found in {path.name}:")
     for err in errors:
         print(" -", err)
