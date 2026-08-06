@@ -15,7 +15,7 @@ def normalize_display_math(text: str) -> str:
 def normalize_inline_math(text: str) -> str:
     # $...$ -> \(...\)
     text = re.sub(
-        r"\$(.+?)\$",
+        r"(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)",
         lambda m: r"\(" + m.group(1) + r"\)",
         text,
     )
@@ -35,8 +35,6 @@ def normalize_trace(text: str):
 def latex_cleanup(text: str):
 
     text = normalize_display_math(text)
-
-    text = normalize_inline_math(text)
 
     text = normalize_det(text)
 
