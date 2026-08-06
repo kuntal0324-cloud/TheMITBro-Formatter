@@ -4,8 +4,20 @@ def trace(matrix):
 
     return Matrix(matrix).trace()
 
+import re
+
 def extract_matrix(question):
-    pass
+
+    match = re.search(
+        r"\\begin{bmatrix}(.*?)\\end{bmatrix}",
+        question,
+        flags=re.DOTALL
+    )
+
+    if not match:
+        return None
+
+    return match.group(1)
 
 if __name__ == "__main__":
 
