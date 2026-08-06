@@ -920,21 +920,25 @@ Matrix \(A\) is of order \(2\times3\) and matrix \(B\) is of order \(3\times2\).
 The order of the product \(AB\) is
 
 A. 
+
 $$
 \(2\times2\)
 $$
 
 B. 
+
 $$
 \(3\times3\)
 $$
 
 C. 
+
 $$
 \(2\times3\)
 $$
 
 D. 
+
 $$
 \(3\times2\)
 $$
