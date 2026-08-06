@@ -91,21 +91,21 @@ if __name__ == "__main__":
     question = """
     ### Question
 
-    Let
+Let
 
-    $$
-    A=
-    \\begin{bmatrix}
-    2 & -1\\\\
-    3 & 4
-    \\end{bmatrix}
-    $$
+$$
+A=
+\begin{bmatrix}
+2 & -1\\
+3 & 4
+\end{bmatrix}
+$$
 
-    Find the trace.
-    
-    **Correct Answer:** 6
-    """
+Find the trace.
 
+**Correct Answer:** 6
+
+**Concept Tested:** Matrix Trace
     matrix = extract_matrix(question)
 
 print("Matrix:", matrix)
