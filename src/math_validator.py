@@ -59,6 +59,18 @@ def extract_matrix(question):
         cleaned.append(numbers)
 
     return cleaned
+def verify_trace(question):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_answer(question)
+
+    if expected is None:
+        return False
+
+    computed = trace(matrix)
+
+    return computed == int(expected)
 
 if __name__ == "__main__":
 
@@ -86,3 +98,4 @@ print("Matrix:", matrix)
 print("Trace:", trace(matrix))
 print("Det:", determinant(matrix))
 print("Answer:", extract_answer(question))
+print("Verify:", verify_trace(question))
