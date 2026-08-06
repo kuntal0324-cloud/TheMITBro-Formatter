@@ -14,6 +14,7 @@ def multiply(A, B):
 
 import re
 
+def extract_answer(question):
 def extract_matrix(question):
 
     match = re.search(
@@ -72,3 +73,15 @@ if __name__ == "__main__":
 print("Matrix:", matrix)
 print("Trace:", trace(matrix))
 print("Det:", determinant(matrix))
+
+print("Answer:", extract_answer(question))
+
+def verify_trace(question):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_answer(question)
+
+    computed = trace(matrix)
+
+    return computed == expected
