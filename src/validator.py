@@ -107,6 +107,11 @@ def validate(text):
     # Check balanced $$ blocks
     # -------------------------------------------------
 
+    question_ids = re.findall(
+    r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
+    text
+    )
+
     if text.count("$$") % 2 != 0:
         errors.append("Unmatched $$ display math block.")
 
