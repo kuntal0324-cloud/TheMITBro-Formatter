@@ -15,6 +15,16 @@ def multiply(A, B):
 import re
 
 def extract_answer(question):
+
+    match = re.search(
+        r"\*\*Correct Answer:\*\*\s*(.+)",
+        question
+    )
+
+    if not match:
+        return None
+
+    return match.group(1).strip()
 def extract_matrix(question):
 
     match = re.search(
@@ -66,6 +76,8 @@ if __name__ == "__main__":
     $$
 
     Find the trace.
+    
+    **Correct Answer:** 6
     """
 
     matrix = extract_matrix(question)
@@ -73,5 +85,4 @@ if __name__ == "__main__":
 print("Matrix:", matrix)
 print("Trace:", trace(matrix))
 print("Det:", determinant(matrix))
-
 print("Answer:", extract_answer(question))
