@@ -176,25 +176,22 @@ def format_document(text):
 def process_file(path):
 
     with open(path, "r", encoding="utf-8") as f:
-
         data = f.read()
 
     formatted = format_document(data)
 
-# Phase-1 Markdown cleanup
-formatted = re.sub(r"\n{3,}", "\n\n", formatted)
-formatted = re.sub(r"(?:\n---\s*){2,}", "\n---\n", formatted)
-formatted = re.sub(r"\\{2}mathrm", r"\\mathrm", formatted)
-formatted = formatted.rstrip() + "\n"
+    # Phase-1 Markdown cleanup
+    formatted = re.sub(r"\n{3,}", "\n\n", formatted)
+    formatted = re.sub(r"(?:\n---\s*){2,}", "\n---\n", formatted)
+    formatted = re.sub(r"\\{2}mathrm", r"\\mathrm", formatted)
+    formatted = formatted.rstrip() + "\n"
 
-out_file = OUTPUT_DIR / path.name
+    out_file = OUTPUT_DIR / path.name
 
-with open(out_file, "w", encoding="utf-8") as f:
-    f.write(formatted)
+    with open(out_file, "w", encoding="utf-8") as f:
+        f.write(formatted)
 
     print(f"✓ {path.name}")
-
-
 # -------------------------------------------------
 # Main
 # -------------------------------------------------
