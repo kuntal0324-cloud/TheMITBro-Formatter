@@ -91,42 +91,56 @@ def validate_required_sections(questions):
 
     return errors
 
-def validate(text):
+def validate_mcq_options(questions):
+
     errors = []
-    
-    questions = split_questions(text)
 
-    errors.extend(validate_duplicate_ids(text))
-    errors.extend(validate_question_sequence(text))
-    errors.extend(validate_required_sections(questions))
+    for question in questions:
 
-    # -------------------------------------------------
-    # MCQ Option Validation
-    # -------------------------------------------------
+        qid = re.search(
+            r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
+            question
+        )
+
+        if not qid:
+            continue
 
         if "**Type:** MCQ" in question:
 
             options = re.findall(
-            r"^\s*([A-D])\.",
-            question,
-            flags=re.MULTILINE
+                r"^\s*([A-D])\.",
+                question,
+                flags=re.MULTILINE
+            )
+
+            if options != ["A", "B", "C", "D"]:
+                errors.append(
+                    f"{qid.group(1)}: Invalid MCQ options ({options})"
+                )
+
+    return errors
+
+def validate_correct_answers(questions):
+
+    errors = []
+
+    for question in questions:
+
+        qid = re.search(
+            r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
+            question
         )
 
-        if options != ["A", "B", "C", "D"]:
-            errors.append(
-               f"{qid.group(1)}: Invalid MCQ options ({options})"
-        ) 
-            
-    # -------------------------------------------------
-    # Correct Answer Validation
-    # -------------------------------------------------
+        if not qid:
+            continue
 
-    answer = re.search(
-        r"\*\*Correct Answer:\*\*\s*(.+)",
-        question
-    )
+        answer = re.search(
+            r"\*\*Correct Answer:\*\*\s*(.+)",
+            question
+        )
 
-    if answer:
+        if not answer:
+            continue
 
         value = answer.group(1).strip()
 
@@ -139,21 +153,26 @@ def validate(text):
 
         elif "**Type:** NAT" in question:
 
-              if not re.fullmatch(r"-?\d+(\.\d+)?", value):
-                  errors.append(
-                      f"{qid.group(1)}: Invalid NAT answer ({value})"
+            if not re.fullmatch(r"-?\d+(\.\d+)?", value):
+                errors.append(
+                    f"{qid.group(1)}: Invalid NAT answer ({value})"
                 )
-    # -------------------------------------------------
-    # Check balanced $$ blocks
-    # -------------------------------------------------
 
-    question_ids = re.findall(
-    r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
-    text
-    )
+    return errors
+
+def validate(text):
+
+    errors = []
+
+    questions = split_questions(text)
+
+    errors.extend(validate_duplicate_ids(text))
+    errors.extend(validate_question_sequence(text))
+    errors.extend(validate_required_sections(questions))
+    errors.extend(validate_mcq_options(questions))
+    errors.extend(validate_correct_answers(questions))
 
     if text.count("$$") % 2 != 0:
         errors.append("Unmatched $$ display math block.")
-
 
     return errors
