@@ -39,7 +39,7 @@ def extract_matrix(question):
 
         cleaned.append(numbers)
 
-     return cleaned
+    return cleaned
 
 if __name__ == "__main__":
 
