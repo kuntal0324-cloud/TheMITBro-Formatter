@@ -23,8 +23,20 @@ jobs:
         with:
           python-version: "3.11"
 
+      # Install Python packages
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
+
+      # Temporary SymPy test
+      - name: Test Math Validator
+        run: |
+          python src/math_validator.py
+
+      # Run formatter
       - name: Run formatter
-        run: python src/main.py
+        run: |
+          python src/main.py
 
       - name: Commit formatted files
         run: |
