@@ -1102,7 +1102,7 @@ D. 90
 
 ### Solution
 
-For an \(n\times n\) matrix,
+For an $$\(n\times n\)$$ matrix,
 
 $$
 \mathrm{det}(kA)=k^n\mathrm{det}(A).
