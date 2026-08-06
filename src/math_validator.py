@@ -1,6 +1,17 @@
 import re
 from sympy import Matrix
 
+# -----------------------------------
+# Topic Constants
+# -----------------------------------
+
+TOPIC_TRACE = "Matrix Trace"
+TOPIC_DETERMINANT = "Determinant"
+
+# -----------------------------------
+# Matrix Engine
+# -----------------------------------
+
 def trace(matrix):
     return Matrix(matrix).trace()
 
@@ -94,8 +105,8 @@ def verify_determinant(question):
     return verify_numeric(question, determinant)
 
 VERIFIERS = {
-    "Matrix Trace": verify_trace,
-    "Determinant": verify_determinant,
+    TOPIC_TRACE: verify_trace,
+    TOPIC_DETERMINANT: verify_determinant,
 }
     
 def verify(question):
