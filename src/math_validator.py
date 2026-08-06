@@ -31,7 +31,7 @@ def extract_matrix(question):
 
         numbers = []
 
-     for value in values:
+    for value in values:
 
          value = value.strip()
 
