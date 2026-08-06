@@ -75,13 +75,3 @@ print("Trace:", trace(matrix))
 print("Det:", determinant(matrix))
 
 print("Answer:", extract_answer(question))
-
-def verify_trace(question):
-
-    matrix = extract_matrix(question)
-
-    expected = extract_answer(question)
-
-    computed = trace(matrix)
-
-    return computed == expected
