@@ -1,3 +1,5 @@
+from latex_converter import latex_cleanup
+
 import os
 import re
 from pathlib import Path
