@@ -600,9 +600,7 @@ D.
 Expanding,
 
 $$
-(A+B)^2
-=
-A^2+AB+BA+B^2.
+(A+B)^2 = A^2+AB+BA+B^2.
 $$
 
 Since
@@ -614,9 +612,7 @@ $$
 we get
 
 $$
-(A+B)^2
-=
-A^2+2AB+B^2.
+(A+B)^2 = A^2+2AB+B^2.
 $$
 
 **Concept Tested:** Matrix algebra.
