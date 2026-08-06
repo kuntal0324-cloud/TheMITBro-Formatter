@@ -1086,7 +1086,7 @@ the matrix is symmetric.
 
 ### Question
 
-Let \(A\) be a \(2\times2\) matrix such that
+Let \(A\) be a $$\(2\times2\)$$ matrix such that
 
 $$
 \det(A)=5.
