@@ -71,7 +71,7 @@ def verify_trace(question):
     computed = trace(matrix)
 
     return computed == int(expected)
-    def verify(question):
+def verify(question):
 
     return verify_trace(question)
 
