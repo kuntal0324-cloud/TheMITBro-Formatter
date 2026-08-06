@@ -348,7 +348,7 @@ $$
 Since
 
 $$
-A=\operatorname{diag}(1,-1)
+A=\mathrm{diag}(1,-1)
 $$
 
 raising each diagonal element to the fifth power,
