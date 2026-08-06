@@ -15,6 +15,16 @@ def split_questions(text):
 def validate(text):
     errors = []
     questions = split_questions(text)
+    # TEMPORARY TEST
+    for question in questions:
+
+    qid = re.search(
+        r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
+        question
+    )
+
+    if qid:
+        print("Checking", qid.group(1))
 
     # -------------------------------------------------
     # Duplicate Question IDs
