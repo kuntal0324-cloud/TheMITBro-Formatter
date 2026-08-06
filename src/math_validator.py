@@ -1,4 +1,4 @@
-from sympy import Matrix
+import re
 
 def trace(matrix):
     return Matrix(matrix).trace()
@@ -12,7 +12,7 @@ def matrix_power(matrix, power):
 def multiply(A, B):
     return Matrix(A) * Matrix(B)
 
-import re
+from sympy import Matrix
 def extract_topic(question):
 
         match = re.search(
@@ -70,31 +70,27 @@ def extract_matrix(question):
         cleaned.append(numbers)
 
     return cleaned
+
+def verify_numeric(question, solver):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_answer(question)
+
+    if expected is None:
+        return False
+
+    computed = solver(matrix)
+
+    return computed == int(expected)
+
 def verify_trace(question):
 
-    matrix = extract_matrix(question)
-
-    expected = extract_answer(question)
-
-    if expected is None:
-        return False
-
-    computed = trace(matrix)
-
-    return computed == int(expected)
-
+    return verify_numeric(question, trace)
+    
 def verify_determinant(question):
 
-    matrix = extract_matrix(question)
-
-    expected = extract_answer(question)
-
-    if expected is None:
-        return False
-
-    computed = determinant(matrix)
-
-    return computed == int(expected)
+    return verify_numeric(question, determinant)
     
 def verify(question):
 
