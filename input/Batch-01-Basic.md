@@ -50,7 +50,7 @@ $$
 Therefore,
 
 $$
-\operatorname{tr}(AB)=4+10=14
+\mathrm{tr}(AB)=4+10=14
 $$
 
 The correct value is **14**.
@@ -140,7 +140,7 @@ $$
 then the value of
 
 $$
-\operatorname{tr}(A^2)
+\mathrm{tr}(A^2)
 $$
 
 is
@@ -168,7 +168,7 @@ $$
 Hence,
 
 $$
-\operatorname{tr}(A^2)=7+22=29.
+\mathrm{tr}(A^2)=7+22=29.
 $$
 
 **Concept Tested:** Matrix multiplication and trace.
@@ -350,7 +350,7 @@ $$
 Since
 
 $$
-A=\operatorname{diag}(1,-1)
+A=\mathrm{diag}(1,-1)
 $$
 
 raising each diagonal element to the fifth power,
@@ -387,25 +387,25 @@ which of the following is always true?
 A.
 
 $$
-\operatorname{tr}(A+B)=\operatorname{tr}(A)\operatorname{tr}(B)
+\mathrm{tr}(A+B)=\mathrm{tr}(A)\mathrm{tr}(B)
 $$
 
 B.
 
 $$
-\operatorname{tr}(A+B)=\operatorname{tr}(A)+\operatorname{tr}(B)
+\mathrm{tr}(A+B)=\mathrm{tr}(A)+\mathrm{tr}(B)
 $$
 
 C.
 
 $$
-\operatorname{tr}(A+B)=\operatorname{tr}(AB)
+\mathrm{tr}(A+B)=\mathrm{tr}(AB)
 $$
 
 D.
 
 $$
-\operatorname{tr}(A+B)=0
+\mathrm{tr}(A+B)=0
 $$
 
 **Correct Answer:** B
@@ -417,9 +417,9 @@ Trace is linear.
 Therefore,
 
 $$
-\operatorname{tr}(A+B)=
-\operatorname{tr}(A)+
-\operatorname{tr}(B).
+\mathrm{tr}(A+B)=
+\mathrm{tr}(A)+
+\mathrm{tr}(B).
 $$
 
 **Concept Tested:** Properties of trace.
@@ -450,7 +450,7 @@ $$
 Find
 
 $$
-\operatorname{tr}(A^3).
+\mathrm{tr}(A^3).
 $$
 
 **Correct Answer:** 28
@@ -480,7 +480,7 @@ $$
 Therefore,
 
 $$
-\operatorname{tr}(A^3)=13+13=26.
+\mathrm{tr}(A^3)=13+13=26.
 $$
 
 **Answer = 26**
@@ -663,7 +663,7 @@ D. 8
 The trace of a square matrix is the sum of its diagonal elements.
 
 $$
-\operatorname{tr}(A)=3+4=7.
+\mathrm{tr}(A)=3+4=7.
 $$
 
 **Concept Tested:** Trace of a matrix.
