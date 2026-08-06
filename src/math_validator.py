@@ -15,7 +15,7 @@ def multiply(A, B):
 import re
 
 def extract_answer(question):
-def extract_topic(question):
+    def extract_topic(question):
 
     match = re.search(
         r"\*\*Concept Tested:\*\*\s*(.+)",
