@@ -21,8 +21,20 @@ def validate(text):
         qid = re.search(r"##\s+([A-Z]{2}-[A-Z]{3}-\d{3})",
         question)
 
-        if qid:
-           print("Checking", qid.group(1))
+        if not qid:
+    continue
+
+required_sections = [
+    "### Question",
+    "**Correct Answer:**",
+    "### Solution",
+    "**Concept Tested:**",
+    "**Tags:**"
+]
+
+for section in required_sections:
+    if section not in question:
+        errors.append(f"{qid.group(1)}: Missing {section}")
 
     # -------------------------------------------------
     # Duplicate Question IDs
