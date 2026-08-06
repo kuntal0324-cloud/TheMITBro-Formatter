@@ -103,4 +103,25 @@ def validate(text):
     if text.count("$$") % 2 != 0:
         errors.append("Unmatched $$ display math block.")
 
+    # -------------------------------------------------
+    # Question ID sequence validation
+    # -------------------------------------------------
+
+    numbers = []
+
+    for qid in question_ids:
+
+        number = int(qid.split("-")[-1])
+
+        numbers.append(number)
+
+    for i in range(len(numbers) - 1):
+
+        expected = numbers[i] + 1
+
+        if numbers[i + 1] != expected:
+
+            errors.append(
+                f"Question IDs out of sequence: {numbers[i]:03d} -> {numbers[i+1]:03d}"
+            )
     return errors
