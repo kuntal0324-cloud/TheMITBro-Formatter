@@ -39,19 +39,19 @@ D. \(14\)
 
 ### Solution
 
-\[
+$$
 AB=
 \begin{bmatrix}
 4 & 3\\
 -5 & 10
 \end{bmatrix}
-\]
+$$
 
 Therefore,
 
-\[
+$$
 \operatorname{tr}(AB)=4+10=14
-\]
+$$
 
 The correct value is **14**.
 
@@ -90,25 +90,25 @@ D. \(B+A\)
 
 For matrix multiplication,
 
-\[
+$$
 (m\times n)(n\times p)
-\]
+$$
 
 is defined.
 
 Hence,
 
-\[
+$$
 (3\times4)(4\times5)
-\]
+$$
 
 is valid.
 
 Therefore,
 
-\[
+$$
 AB
-\]
+$$
 
 is defined.
 
@@ -139,9 +139,9 @@ $$
 
 then the value of
 
-\[
+$$
 \operatorname{tr}(A^2)
-\]
+$$
 
 is
 
@@ -157,19 +157,19 @@ D. 30
 
 ### Solution
 
-\[
+$$
 A^2=
 \begin{bmatrix}
 7 & 10\\
 15 & 22
 \end{bmatrix}
-\]
+$$
 
 Hence,
 
-\[
+$$
 \operatorname{tr}(A^2)=7+22=29.
-\]
+$$
 
 **Concept Tested:** Matrix multiplication and trace.
 
@@ -188,9 +188,9 @@ Hence,
 
 Let \(A\) be a square matrix satisfying
 
-\[
+$$
 A+A^T=O
-\]
+$$
 
 where \(O\) is the zero matrix.
 
@@ -210,15 +210,15 @@ D. Diagonal
 
 Since
 
-\[
+$$
 A+A^T=0
-\]
+$$
 
 we obtain
 
-\[
+$$
 A^T=-A.
-\]
+$$
 
 Hence \(A\) is skew-symmetric.
 
@@ -253,19 +253,19 @@ Find the sum of all elements of \(A^2\).
 
 ### Solution
 
-\[
+$$
 A^2=
 \begin{bmatrix}
 8 & 5\\
 20 & 13
 \end{bmatrix}
-\]
+$$
 
 Sum
 
-\[
+$$
 8+5+20+13=46.
-\]
+$$
 
 Therefore,
 
@@ -906,9 +906,9 @@ D. Idempotent
 
 ### Solution
 
-\[
+$$
 \det(A)=4\times3-2\times6=12-12=0.
-\]
+$$
 
 Since the determinant is zero, the matrix is singular.
 
@@ -945,15 +945,15 @@ D. \(3\times2\)
 
 Since
 
-\[
+$$
 (2\times3)(3\times2)
-\]
+$$
 
 is valid, the resulting matrix has order
 
-\[
+$$
 2\times2.
-\]
+$$
 
 **Concept Tested:** Matrix multiplication.
 
@@ -982,9 +982,9 @@ $$
 
 then
 
-\[
+$$
 \det(A)
-\]
+$$
 
 is
 
@@ -1002,15 +1002,15 @@ D. 4
 
 For a diagonal matrix,
 
-\[
+$$
 \det(A)
-\]
+$$
 
 is the product of the diagonal elements.
 
-\[
+$$
 4\times7=28.
-\]
+$$
 
 **Concept Tested:** Determinant of diagonal matrices.
 
@@ -1053,9 +1053,9 @@ D. Singular
 
 Since
 
-\[
+$$
 A^T=A,
-\]
+$$
 
 the matrix is symmetric.
 
@@ -1076,15 +1076,15 @@ the matrix is symmetric.
 
 Let \(A\) be a \(2\times2\) matrix such that
 
-\[
+$$
 \det(A)=5.
-\]
+$$
 
 Find
 
-\[
+$$
 \det(3A).
-\]
+$$
 
 A. 9
 
@@ -1100,21 +1100,21 @@ D. 90
 
 For an \(n\times n\) matrix,
 
-\[
+$$
 \det(kA)=k^n\det(A).
-\]
+$$
 
 Here,
 
-\[
+$$
 n=2.
-\]
+$$
 
 Therefore,
 
-\[
+$$
 \det(3A)=3^2\times5=45.
-\]
+$$
 
 **Concept Tested:** Scaling property of determinants.
 
