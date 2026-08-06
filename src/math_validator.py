@@ -17,15 +17,15 @@ import re
 def extract_answer(question):
     def extract_topic(question):
 
-    match = re.search(
-        r"\*\*Concept Tested:\*\*\s*(.+)",
-        question
-    )
+        match = re.search(
+            r"\*\*Concept Tested:\*\*\s*(.+)",
+            question
+        )
 
-    if not match:
-        return None
+        if not match:
+            return None
 
-    return match.group(1).strip()
+        return match.group(1).strip()
 
     match = re.search(
         r"\*\*Correct Answer:\*\*\s*(.+)",
