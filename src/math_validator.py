@@ -17,7 +17,11 @@ def extract_matrix(question):
     if not match:
         return None
 
-    return match.group(1)
+    matrix_text = match.group(1)
+
+rows = matrix_text.split("\\\\")
+
+return rows
 
 if __name__ == "__main__":
 
