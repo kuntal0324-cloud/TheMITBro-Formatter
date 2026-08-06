@@ -17,7 +17,7 @@ def extract_matrix(question):
     if not match:
         return None
 
-    matrix_text = match.group(1)
+matrix_text = match.group(1)
 
 rows = matrix_text.split("\\\\")
 
