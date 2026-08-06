@@ -90,25 +90,28 @@ if __name__ == "__main__":
 
     question = """
     ### Question
- 
+
     Let
+
     $$
     A=
-    \begin{bmatrix}
-    2 & -1\\
+    \\begin{bmatrix}
+    2 & -1\\\\
     3 & 4
-    \end{bmatrix}
+    \\end{bmatrix}
     $$
 
     Find the trace.
 
-**Correct Answer:** 6
+    **Correct Answer:** 6
 
-**Concept Tested:** Matrix Trace
+    **Concept Tested:** Matrix Trace
+    """
+
     matrix = extract_matrix(question)
 
-print("Matrix:", matrix)
-print("Trace:", trace(matrix))
-print("Det:", determinant(matrix))
-print("Answer:", extract_answer(question))
-print("Verify:", verify(question))
+    print("Matrix:", matrix)
+    print("Trace:", trace(matrix))
+    print("Det:", determinant(matrix))
+    print("Answer:", extract_answer(question))
+    print("Verify:", verify(question))
