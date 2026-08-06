@@ -37,9 +37,9 @@ def extract_matrix(question):
 
          numbers.append(int(value))
 
-      cleaned.append(numbers)
+         cleaned.append(numbers)
 
-    return cleaned
+ return cleaned
 
 if __name__ == "__main__":
 
