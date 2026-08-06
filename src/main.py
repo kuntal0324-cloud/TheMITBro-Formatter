@@ -168,6 +168,8 @@ def format_document(text):
 
     text = convert_all_matrices(text)
 
+    text = latex_cleanup(text)
+
     return text
 
 
