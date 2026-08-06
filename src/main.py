@@ -181,11 +181,16 @@ def process_file(path):
 
     formatted = format_document(data)
 
-    out_file = OUTPUT_DIR / path.name
+# Phase-1 Markdown cleanup
+formatted = re.sub(r"\n{3,}", "\n\n", formatted)
+formatted = re.sub(r"(?:\n---\s*){2,}", "\n---\n", formatted)
+formatted = re.sub(r"\\{2}mathrm", r"\\mathrm", formatted)
+formatted = formatted.rstrip() + "\n"
 
-    with open(out_file, "w", encoding="utf-8") as f:
+out_file = OUTPUT_DIR / path.name
 
-        f.write(formatted)
+with open(out_file, "w", encoding="utf-8") as f:
+    f.write(formatted)
 
     print(f"✓ {path.name}")
 
