@@ -1,8 +1,16 @@
 from sympy import Matrix
 
 def trace(matrix):
-
     return Matrix(matrix).trace()
+
+def determinant(matrix):
+    return Matrix(matrix).det()
+
+def matrix_power(matrix, power):
+    return Matrix(matrix) ** power
+
+def multiply(A, B):
+    return Matrix(A) * Matrix(B)
 
 import re
 
@@ -59,4 +67,8 @@ if __name__ == "__main__":
     Find the trace.
     """
 
-    print(extract_matrix(question))
+    matrix = extract_matrix(question)
+
+print("Matrix:", matrix)
+print("Trace:", trace(matrix))
+print("Det:", determinant(matrix))
