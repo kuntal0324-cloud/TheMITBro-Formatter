@@ -35,6 +35,22 @@ def validate(text):
         for section in required_sections:
             if section not in question:
                errors.append(f"{qid.group(1)}: Missing {section}")
+    # -------------------------------------------------
+    # MCQ Option Validation
+    # -------------------------------------------------
+
+if "**Type:** MCQ" in question:
+
+    options = re.findall(
+        r"^\s*([A-D])\.",
+        question,
+        flags=re.MULTILINE
+    )
+
+    if options != ["A", "B", "C", "D"]:
+        errors.append(
+            f"{qid.group(1)}: Invalid MCQ options ({options})"
+        ) 
 
     # -------------------------------------------------
     # Duplicate Question IDs
