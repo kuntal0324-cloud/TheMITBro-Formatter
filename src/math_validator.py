@@ -13,9 +13,7 @@ def multiply(A, B):
     return Matrix(A) * Matrix(B)
 
 import re
-
-def extract_answer(question):
-    def extract_topic(question):
+def extract_topic(question):
 
         match = re.search(
             r"\*\*Concept Tested:\*\*\s*(.+)",
@@ -26,7 +24,9 @@ def extract_answer(question):
             return None
 
         return match.group(1).strip()
-
+    
+def extract_answer(question):
+    
     match = re.search(
         r"\*\*Correct Answer:\*\*\s*(.+)",
         question
@@ -84,8 +84,12 @@ def verify_trace(question):
     return computed == int(expected)
 def verify(question):
 
-    return verify_trace(question)
+    topic = extract_topic(question)
 
+    if topic == "Matrix Trace":
+        return verify_trace(question)
+
+    return None
 if __name__ == "__main__":
 
     question = """
