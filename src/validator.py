@@ -22,18 +22,18 @@ def validate(text):
         question)
 
         if not qid:
-    continue
+        continue
 
-required_sections = [
-    "### Question",
-    "**Correct Answer:**",
-    "### Solution",
-    "**Concept Tested:**",
-    "**Tags:**"
-]
+        required_sections = [
+        "### Question",
+        "**Correct Answer:**",
+        "### Solution",
+        "**Concept Tested:**",
+        "**Tags:**"
+        ]
 
-for section in required_sections:
-    if section not in question:
+        for section in required_sections:
+        if section not in question:
         errors.append(f"{qid.group(1)}: Missing {section}")
 
     # -------------------------------------------------
