@@ -14,6 +14,7 @@ def split_questions(text):
     return [q.strip() for q in questions if q.strip()]
 def validate(text):
     errors = []
+    questions = split_questions(text)
 
     # -------------------------------------------------
     # Duplicate Question IDs
