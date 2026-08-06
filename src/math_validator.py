@@ -1,4 +1,5 @@
 import re
+from sympy import Matrix
 
 def trace(matrix):
     return Matrix(matrix).trace()
@@ -12,7 +13,6 @@ def matrix_power(matrix, power):
 def multiply(A, B):
     return Matrix(A) * Matrix(B)
 
-from sympy import Matrix
 def extract_topic(question):
 
         match = re.search(
@@ -91,6 +91,11 @@ def verify_trace(question):
 def verify_determinant(question):
 
     return verify_numeric(question, determinant)
+
+VERIFIERS = {
+    "Matrix Trace": verify_trace,
+    "Determinant": verify_determinant,
+}
     
 def verify(question):
 
