@@ -145,7 +145,27 @@ def extract_answer_matrix(question):
 
     matrix_text = match.group(1)
 
-    print(matrix_text)
+        rows = matrix_text.split("\\\\")
+
+    cleaned = []
+
+    for row in rows:
+
+        row = row.strip()
+
+        values = row.split("&")
+
+        numbers = []
+
+        for value in values:
+
+            value = value.strip()
+
+            numbers.append(int(value))
+
+        cleaned.append(numbers)
+
+    return cleaned
 
 # -----------------------------------
 # Generic Verifier
