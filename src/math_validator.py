@@ -113,7 +113,7 @@ def verify_numeric(question, solver):
 
     expected = float(expected)
 
-return abs(float(computed) - expected) < 1e-6
+    return abs(float(computed) - expected) < 1e-6
 
 # -----------------------------------
 # Topic Verifiers
