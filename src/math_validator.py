@@ -1,9 +1,4 @@
-
 from constants import *
-
-# -----------------------------------
-# Matrix Engine
-# -----------------------------------
 
 from matrix_engine import *
 
