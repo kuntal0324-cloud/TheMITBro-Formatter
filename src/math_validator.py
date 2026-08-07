@@ -225,10 +225,10 @@ Find AB.
 
     print("Matrices:", matrices)
     print("Norm:", norm(matrices))
-    print("Trace:", trace(matrix))
-    print("Det:", determinant(matrix))
+    print("Trace:", trace(matrices))
+    print("Det:", determinant(matrices))
     print("Answer:", extract_answer(question))
-    print("Rank:", rank(matrix))
+    print("Rank:", rank(matrices))
     print("Topic:", extract_topic(question))
     print("Verify:", verify(question))
     print(extract_matrices(question))
