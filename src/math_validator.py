@@ -78,24 +78,13 @@ def extract_answer(question):
         return None
 
     return match.group(1).strip()
-    
-def extract_matrix(question):
 
-    match = re.search(
-        r"\\begin{bmatrix}(.*?)\\end{bmatrix}",
-        question,
-        flags=re.DOTALL
-    )
-
-    if not match:
-        return None
-
-    matrix_text = match.group(1)
+def parse_matrix(matrix_text):
     
     rows = matrix_text.split("\\\\")
 
     cleaned = []
-    
+
     for row in rows:
 
         row = row.strip()
@@ -114,6 +103,21 @@ def extract_matrix(question):
 
     return cleaned
     
+def extract_matrix(question):
+
+    match = re.search(
+        r"\\begin{bmatrix}(.*?)\\end{bmatrix}",
+        question,
+        flags=re.DOTALL
+    )
+
+    if not match:
+        return None
+
+    matrix_text = match.group(1)
+    
+    return parse_matrix(matrix_text)
+    
 def extract_matrices(question):
 
     matches = re.findall(
@@ -125,28 +129,7 @@ def extract_matrices(question):
     parsed = []
 
     for matrix_text in matches:
-
-        rows = matrix_text.split("\\\\")
-
-        cleaned = []
-
-        for row in rows:
-
-            row = row.strip()
-
-            values = row.split("&")
-
-            numbers = []
-
-            for value in values:
-
-                value = value.strip()
-
-                numbers.append(int(value))
-
-            cleaned.append(numbers)
-
-        parsed.append(cleaned)
+        parsed.append(parse_matrix(matrix_text))
 
     return parsed
 
@@ -163,27 +146,7 @@ def extract_answer_matrix(question):
 
     matrix_text = match.group(1)
 
-    rows = matrix_text.split("\\\\")
-
-    cleaned = []
-
-    for row in rows:
-
-        row = row.strip()
-
-        values = row.split("&")
-
-        numbers = []
-
-        for value in values:
-
-            value = value.strip()
-
-            numbers.append(int(value))
-
-        cleaned.append(numbers)
-
-    return cleaned
+    return parse_matrix(matrix_text)
 
 def extract_power(question):
 
