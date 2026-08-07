@@ -12,6 +12,7 @@ TOPIC_NORM = "Matrix Norm"
 TOPIC_MULTIPLICATION = "Matrix Multiplication"
 TOPIC_ADDITION = "Matrix Addition"
 TOPIC_SUBTRACTION = "Matrix Subtraction"
+TOPIC_TRANSPOSE = "Matrix Transpose"
 
 # -----------------------------------
 # Matrix Engine
@@ -41,6 +42,9 @@ def add(A, B):
 
 def subtract(A, B):
     return Matrix(A) - Matrix(B)
+
+def transpose(matrix):
+    return Matrix(matrix).T
 
 # -----------------------------------
 # Parsers
@@ -214,6 +218,16 @@ def verify_rank(question):
 
     return verify_numeric(question, rank)
 
+def verify_single_matrix_operation(question, solver):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_answer_matrix(question)
+
+    computed = solver(matrix)
+
+    return computed.tolist() == expected
+
 def verify_matrix_operation(question, solver):
 
     matrices = extract_matrices(question)
@@ -250,6 +264,7 @@ VERIFIERS = {
     TOPIC_MULTIPLICATION: verify_multiplication,
     TOPIC_ADDITION: verify_addition,
     TOPIC_SUBTRACTION: verify_subtraction,
+    TOPIC_TRANSPOSE: verify_transpose,
 }
     
 def verify(question):
@@ -277,33 +292,24 @@ Let
 $$
 A=
 \begin{bmatrix}
-1 & 2\\
-3 & 4
+1 & 2 & 3\\
+4 & 5 & 6
 \end{bmatrix}
 $$
 
-and
-
-$$
-B=
-\begin{bmatrix}
-5 & 6\\
-7 & 8
-\end{bmatrix}
-$$
-
-Find A+B.
+Find the transpose of A.
 
 **Correct Answer:**
 
 $$
 \begin{bmatrix}
-6 & 8\\
-10 & 12
+1 & 4\\
+2 & 5\\
+3 & 6
 \end{bmatrix}
 $$
 
-**Concept Tested:** Matrix Addition
+**Concept Tested:** Matrix Transpose
 """
 
     matrices = extract_matrices(question)
