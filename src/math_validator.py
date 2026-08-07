@@ -319,3 +319,4 @@ Find A^5.
     print("Matrices:", matrices)
     print(extract_answer_matrix(question))
     print("Verify:", verify(question))
+    print(extract_power(question))
