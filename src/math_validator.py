@@ -10,6 +10,7 @@ TOPIC_DETERMINANT = "Determinant"
 TOPIC_RANK = "Matrix Rank"
 TOPIC_NORM = "Matrix Norm"
 TOPIC_MULTIPLICATION = "Matrix Multiplication"
+TOPIC_ADDITION = "Matrix Addition"
 
 # -----------------------------------
 # Matrix Engine
@@ -33,6 +34,9 @@ def matrix_power(matrix, power):
 
 def multiply(A, B):
     return Matrix(A) * Matrix(B)
+
+def add(A, B):
+    return Matrix(A) + Matrix(B)
 
 # -----------------------------------
 # Parsers
@@ -222,12 +226,29 @@ def verify_multiplication(question):
 
     return computed.tolist() == expected
 
+def verify_addition(question):
+
+    matrices = extract_matrices(question)
+
+    if len(matrices) < 2:
+        return False
+
+    A = matrices[0]
+    B = matrices[1]
+
+    expected = extract_answer_matrix(question)
+
+    computed = add(A, B)
+
+    return computed.tolist() == expected
+
 VERIFIERS = {
     TOPIC_TRACE: verify_trace,
     TOPIC_DETERMINANT: verify_determinant,
     TOPIC_RANK: verify_rank,
     TOPIC_NORM: verify_norm,
     TOPIC_MULTIPLICATION: verify_multiplication,
+    TOPIC_ADDITION: verify_addition,
 }
     
 def verify(question):
@@ -270,18 +291,18 @@ B=
 \end{bmatrix}
 $$
 
-Find AB.
+Find A+B.
 
 **Correct Answer:**
 
 $$
 \begin{bmatrix}
-19 & 22\\
-43 & 50
+6 & 8\\
+10 & 12
 \end{bmatrix}
 $$
 
-**Concept Tested:** Matrix Multiplication
+**Concept Tested:** Matrix Addition
 """
 
     matrices = extract_matrices(question)
