@@ -110,23 +110,23 @@ def extract_matrices(question):
     
             cleaned = []
 
-        for row in rows:
+            for row in rows:
 
-            row = row.strip()
+                row = row.strip()
 
-            values = row.split("&")
+                values = row.split("&")
 
-            numbers = []
+                numbers = []
 
-            for value in values:
+                for value in values:
 
-                value = value.strip()
+                    value = value.strip()
 
-                numbers.append(int(value))
+     numbers.append(int(value))
 
-            cleaned.append(numbers)
+                 cleaned.append(numbers)
 
-        parsed.append(cleaned)
+             parsed.append(cleaned)
 
     return matches
 
