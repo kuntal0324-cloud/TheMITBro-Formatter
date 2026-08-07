@@ -234,8 +234,20 @@ B=
 $$
 
 Find AB.
+
+**Correct Answer:**
+
+$$
+\begin{bmatrix}
+19 & 22\\
+43 & 50
+\end{bmatrix}
+$$
+
+**Concept Tested:** Matrix Multiplication
 """
 
     matrices = extract_matrices(question)
 
     print("Matrices:", matrices)
+    print(extract_answer_matrix(question))
