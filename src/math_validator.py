@@ -95,6 +95,9 @@ def extract_matrix(question):
         cleaned.append(numbers)
 
     return cleaned
+    
+def extract_matrices(question):
+    pass
 
 # -----------------------------------
 # Generic Verifier
