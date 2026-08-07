@@ -13,6 +13,7 @@ TOPIC_MULTIPLICATION = "Matrix Multiplication"
 TOPIC_ADDITION = "Matrix Addition"
 TOPIC_SUBTRACTION = "Matrix Subtraction"
 TOPIC_TRANSPOSE = "Matrix Transpose"
+TOPIC_INVERSE = "Matrix Inverse"
 
 # -----------------------------------
 # Matrix Engine
@@ -45,6 +46,9 @@ def subtract(A, B):
 
 def transpose(matrix):
     return Matrix(matrix).T
+
+def inverse(matrix):
+    return Matrix(matrix).inv()
 
 # -----------------------------------
 # Parsers
@@ -260,6 +264,10 @@ def verify_transpose(question):
 
     return verify_single_matrix_operation(question, transpose)
 
+def verify_inverse(question):
+
+    return verify_single_matrix_operation(question, inverse)
+
 VERIFIERS = {
     TOPIC_TRACE: verify_trace,
     TOPIC_DETERMINANT: verify_determinant,
@@ -269,6 +277,7 @@ VERIFIERS = {
     TOPIC_ADDITION: verify_addition,
     TOPIC_SUBTRACTION: verify_subtraction,
     TOPIC_TRANSPOSE: verify_transpose,
+    TOPIC_INVERSE: verify_inverse,
 }
     
 def verify(question):
