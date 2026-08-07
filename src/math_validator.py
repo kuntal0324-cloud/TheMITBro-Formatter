@@ -133,7 +133,19 @@ def extract_matrices(question):
     return parsed
 
 def extract_answer_matrix(question):
-    pass
+
+    match = re.search(
+        r"\*\*Correct Answer:\*\*.*?\\begin{bmatrix}(.*?)\\end{bmatrix}",
+        question,
+        flags=re.DOTALL
+    )
+
+    if not match:
+        return None
+
+    matrix_text = match.group(1)
+
+    print(matrix_text)
 
 # -----------------------------------
 # Generic Verifier
