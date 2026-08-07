@@ -5,16 +5,7 @@ from sympy import Matrix
 # Topic Constants
 # -----------------------------------
 
-TOPIC_TRACE = "Matrix Trace"
-TOPIC_DETERMINANT = "Determinant"
-TOPIC_RANK = "Matrix Rank"
-TOPIC_NORM = "Matrix Norm"
-TOPIC_MULTIPLICATION = "Matrix Multiplication"
-TOPIC_ADDITION = "Matrix Addition"
-TOPIC_SUBTRACTION = "Matrix Subtraction"
-TOPIC_TRANSPOSE = "Matrix Transpose"
-TOPIC_INVERSE = "Matrix Inverse"
-TOPIC_POWER = "Matrix Power"
+from constants import *
 
 # -----------------------------------
 # Matrix Engine
