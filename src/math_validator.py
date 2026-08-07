@@ -14,6 +14,7 @@ TOPIC_ADDITION = "Matrix Addition"
 TOPIC_SUBTRACTION = "Matrix Subtraction"
 TOPIC_TRANSPOSE = "Matrix Transpose"
 TOPIC_INVERSE = "Matrix Inverse"
+TOPIC_POWER = "Matrix Power"
 
 # -----------------------------------
 # Matrix Engine
@@ -277,6 +278,18 @@ def verify_transpose(question):
 
     return verify_single_matrix_operation(question, transpose)
 
+def verify_power(question):
+
+    matrix = extract_matrix(question)
+
+    power = extract_power(question)
+
+    expected = extract_answer_matrix(question)
+
+    computed = matrix_power(matrix, power)
+
+    return computed.tolist() == expected
+
 def verify_inverse(question):
 
     return verify_single_matrix_operation(question, inverse)
@@ -291,6 +304,7 @@ VERIFIERS = {
     TOPIC_SUBTRACTION: verify_subtraction,
     TOPIC_TRANSPOSE: verify_transpose,
     TOPIC_INVERSE: verify_inverse,
+    TOPIC_POWER: verify_power,
 }
     
 def verify(question):
@@ -311,7 +325,30 @@ def verify(question):
 if __name__ == "__main__":
 
     question = r"""
-Find A^5.
+### Question
+
+Let
+
+$$
+A=
+\begin{bmatrix}
+1 & 2\\
+0 & 1
+\end{bmatrix}
+$$
+
+Find A^3.
+
+**Correct Answer:**
+
+$$
+\begin{bmatrix}
+1 & 6\\
+0 & 1
+\end{bmatrix}
+$$
+
+**Concept Tested:** Matrix Power
 """
 
     matrices = extract_matrices(question)
