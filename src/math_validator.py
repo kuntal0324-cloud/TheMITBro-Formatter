@@ -183,6 +183,19 @@ def extract_answer_matrix(question):
         cleaned.append(numbers)
 
     return cleaned
+
+def extract_power(question):
+
+    match = re.search(
+        r"A\^(\d+)",
+        question
+    )
+
+    if not match:
+        return None
+
+    return int(match.group(1))
+    
 # -----------------------------------
 # Generic Verifier
 # -----------------------------------
@@ -298,30 +311,7 @@ def verify(question):
 if __name__ == "__main__":
 
     question = r"""
-### Question
-
-Let
-
-$$
-A=
-\begin{bmatrix}
-1 & 2\\
-3 & 4
-\end{bmatrix}
-$$
-
-Find the inverse of A.
-
-**Correct Answer:**
-
-$$
-\begin{bmatrix}
--2 & 1\\
-1.5 & -0.5
-\end{bmatrix}
-$$
-
-**Concept Tested:** Matrix Inverse
+Find A^5.
 """
 
     matrices = extract_matrices(question)
