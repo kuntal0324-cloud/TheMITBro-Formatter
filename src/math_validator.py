@@ -174,6 +174,6 @@ Find the rank.
     print("Trace:", trace(matrix))
     print("Det:", determinant(matrix))
     print("Answer:", extract_answer(question))
-    print("Verify:", verify(question))
+    print("Rank:", rank(matrix))
     print("Topic:", extract_topic(question))
     print("Verify:", verify(question))
