@@ -39,7 +39,7 @@ def extract_topic(question):
     if not match:
          return None
 
-     return match.group(1).strip()
+    return match.group(1).strip()
     
 def extract_answer(question):
     
