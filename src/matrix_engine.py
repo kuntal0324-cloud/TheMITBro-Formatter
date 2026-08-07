@@ -1,5 +1,9 @@
 from sympy import Matrix
 
+# -----------------------------------
+# Matrix Engine
+# -----------------------------------
+
 def trace(matrix):
     return Matrix(matrix).trace()
     
