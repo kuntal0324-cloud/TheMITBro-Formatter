@@ -166,6 +166,7 @@ Find the rank.
 **Correct Answer:** 1
 
 **Concept Tested:** Matrix Rank
+"""
 
     matrix = extract_matrix(question)
 
