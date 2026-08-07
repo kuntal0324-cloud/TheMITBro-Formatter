@@ -256,6 +256,10 @@ def verify_subtraction(question):
 
     return verify_matrix_operation(question, subtract)
 
+def verify_transpose(question):
+
+    return verify_single_matrix_operation(question, transpose)
+
 VERIFIERS = {
     TOPIC_TRACE: verify_trace,
     TOPIC_DETERMINANT: verify_determinant,
