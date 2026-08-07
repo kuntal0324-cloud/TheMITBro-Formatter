@@ -224,7 +224,7 @@ Find AB.
     matrices = extract_matrices(question)
 
     print("Matrices:", matrices)
-    print("Norm:", norm(matrix))
+    print("Norm:", norm(matrices))
     print("Trace:", trace(matrix))
     print("Det:", determinant(matrix))
     print("Answer:", extract_answer(question))
