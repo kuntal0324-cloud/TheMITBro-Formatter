@@ -151,6 +151,8 @@ def extract_answer_matrix(question):
 
     for row in rows:
 
+for row in rows:
+
     row = row.strip()
 
     values = row.split("&")
@@ -166,7 +168,6 @@ def extract_answer_matrix(question):
     cleaned.append(numbers)
 
 return cleaned
-
 # -----------------------------------
 # Generic Verifier
 # -----------------------------------
