@@ -145,7 +145,7 @@ def extract_answer_matrix(question):
 
     matrix_text = match.group(1)
 
-        rows = matrix_text.split("\\\\")
+    rows = matrix_text.split("\\\\")
 
     cleaned = []
 
@@ -161,7 +161,7 @@ def extract_answer_matrix(question):
 
             value = value.strip()
 
-            numbers.append(int(value))
+numbers.append(int(value))
 
         cleaned.append(numbers)
 
