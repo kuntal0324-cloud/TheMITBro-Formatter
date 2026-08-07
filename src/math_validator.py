@@ -165,7 +165,7 @@ def extract_answer_matrix(question):
 
         cleaned.append(numbers)
 
-     return cleaned
+return cleaned
 
 # -----------------------------------
 # Generic Verifier
