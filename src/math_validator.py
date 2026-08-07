@@ -302,28 +302,16 @@ if __name__ == "__main__":
 
 Let
 
-$$
-A=
-\begin{bmatrix}
-1 & 2 & 3\\
-4 & 5 & 6
-\end{bmatrix}
-$$
+A =
+[1 2]
+[3 4]
 
-Find the transpose of A.
+Correct Answer:
 
-**Correct Answer:**
+[-2   1]
+[1.5 -0.5]
 
-$$
-\begin{bmatrix}
-1 & 4\\
-2 & 5\\
-3 & 6
-\end{bmatrix}
-$$
-
-**Concept Tested:** Matrix Transpose
-"""
+Concept Tested: Matrix Inverse
 
     matrices = extract_matrices(question)
 
