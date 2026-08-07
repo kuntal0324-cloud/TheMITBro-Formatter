@@ -97,7 +97,13 @@ def extract_matrix(question):
     return cleaned
     
 def extract_matrices(question):
-    pass
+    matches = re.findall(
+        r"\\begin{bmatrix}(.*?)\\end{bmatrix}",
+        question,
+        flags=re.DOTALL
+    )
+
+    return matches
 
 # -----------------------------------
 # Generic Verifier
@@ -192,3 +198,4 @@ Find the Frobenius norm of A.
     print("Rank:", rank(matrix))
     print("Topic:", extract_topic(question))
     print("Verify:", verify(question))
+    print(extract_matrices(question))
