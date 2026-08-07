@@ -102,6 +102,7 @@ def extract_matrices(question):
         question,
         flags=re.DOTALL
     )
+    parsed = []
 
     return matches
 
