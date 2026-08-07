@@ -103,6 +103,30 @@ def extract_matrices(question):
         flags=re.DOTALL
     )
     parsed = []
+    
+    for matrix_text in matches:
+
+    rows = matrix_text.split("\\\\")
+    
+            cleaned = []
+
+        for row in rows:
+
+            row = row.strip()
+
+            values = row.split("&")
+
+            numbers = []
+
+            for value in values:
+
+                value = value.strip()
+
+                numbers.append(int(value))
+
+            cleaned.append(numbers)
+
+        parsed.append(cleaned)
 
     return matches
 
