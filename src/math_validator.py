@@ -203,16 +203,22 @@ Let
 $$
 A=
 \begin{bmatrix}
-3 & 4\\
-0 & 0
+1 & 2\\
+3 & 4
 \end{bmatrix}
 $$
 
-Find the Frobenius norm of A.
+and
 
-**Correct Answer:** 5
+$$
+B=
+\begin{bmatrix}
+5 & 6\\
+7 & 8
+\end{bmatrix}
+$$
 
-**Concept Tested:** Matrix Norm
+Find AB.
 """
 
     matrix = extract_matrix(question)
