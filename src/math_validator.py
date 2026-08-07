@@ -2,10 +2,6 @@ from constants import *
 
 from matrix_engine import *
 
-# -----------------------------------
-# Parsers
-# -----------------------------------
-
 from parsers import *
     
 # -----------------------------------
