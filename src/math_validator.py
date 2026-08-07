@@ -210,7 +210,7 @@ def verify_rank(question):
 
     return verify_numeric(question, rank)
 
-def verify_multiplication(question):
+def verify_matrix_operation(question, solver):
 
     matrices = extract_matrices(question)
 
@@ -222,25 +222,17 @@ def verify_multiplication(question):
 
     expected = extract_answer_matrix(question)
 
-    computed = multiply(A, B)
+    computed = solver(A, B)
 
     return computed.tolist() == expected
+
+def verify_multiplication(question):
+
+    return verify_matrix_operation(question, multiply)
 
 def verify_addition(question):
 
-    matrices = extract_matrices(question)
-
-    if len(matrices) < 2:
-        return False
-
-    A = matrices[0]
-    B = matrices[1]
-
-    expected = extract_answer_matrix(question)
-
-    computed = add(A, B)
-
-    return computed.tolist() == expected
+    return verify_matrix_operation(question, add)
 
 VERIFIERS = {
     TOPIC_TRACE: verify_trace,
