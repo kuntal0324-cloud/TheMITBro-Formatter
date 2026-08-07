@@ -161,9 +161,9 @@ def extract_answer_matrix(question):
 
             value = value.strip()
 
-numbers.append(int(value))
+            numbers.append(int(value))
 
-         cleaned.append(numbers)
+        cleaned.append(numbers)
 
      return cleaned
 
