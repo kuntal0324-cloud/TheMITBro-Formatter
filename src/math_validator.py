@@ -11,36 +11,7 @@ from constants import *
 # Matrix Engine
 # -----------------------------------
 
-def trace(matrix):
-    return Matrix(matrix).trace()
-    
-
-def determinant(matrix):
-    return Matrix(matrix).det()
-
-def rank(matrix):
-    return Matrix(matrix).rank()
-
-def norm(matrix):
-    return Matrix(matrix).norm()
-
-def matrix_power(matrix, power):
-    return Matrix(matrix) ** power
-
-def multiply(A, B):
-    return Matrix(A) * Matrix(B)
-
-def add(A, B):
-    return Matrix(A) + Matrix(B)
-
-def subtract(A, B):
-    return Matrix(A) - Matrix(B)
-
-def transpose(matrix):
-    return Matrix(matrix).T
-
-def inverse(matrix):
-    return Matrix(matrix).inv()
+from matrix_engine import *
 
 # -----------------------------------
 # Parsers
