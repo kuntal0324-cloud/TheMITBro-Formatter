@@ -97,38 +97,40 @@ def extract_matrix(question):
     return cleaned
     
 def extract_matrices(question):
+
     matches = re.findall(
         r"\\begin{bmatrix}(.*?)\\end{bmatrix}",
         question,
         flags=re.DOTALL
     )
+
     parsed = []
-    
+
     for matrix_text in matches:
 
-    rows = matrix_text.split("\\\\")
-    
-            cleaned = []
+        rows = matrix_text.split("\\\\")
 
-            for row in rows:
+        cleaned = []
 
-                row = row.strip()
+        for row in rows:
 
-                values = row.split("&")
+            row = row.strip()
 
-                numbers = []
+            values = row.split("&")
 
-                for value in values:
+            numbers = []
 
-                    value = value.strip()
+            for value in values:
 
-     numbers.append(int(value))
+                value = value.strip()
 
-                 cleaned.append(numbers)
+                numbers.append(int(value))
 
-             parsed.append(cleaned)
+            cleaned.append(numbers)
 
-    return matches
+        parsed.append(cleaned)
+
+    return parsed
 
 # -----------------------------------
 # Generic Verifier
