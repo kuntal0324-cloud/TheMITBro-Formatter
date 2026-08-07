@@ -3,10 +3,6 @@ from constants import *
 from matrix_engine import *
 
 from parsers import *
-    
-# -----------------------------------
-# Verifier
-# -----------------------------------
 
 from verifiers import *
 
