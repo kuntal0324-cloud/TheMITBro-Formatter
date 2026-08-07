@@ -101,6 +101,10 @@ def verify_inverse(question):
 
     return verify_single_matrix_operation(question, inverse)
 
+# -----------------------------------
+# Dispatcher
+# -----------------------------------
+
 VERIFIERS = {
     TOPIC_TRACE: verify_trace,
     TOPIC_DETERMINANT: verify_determinant,
