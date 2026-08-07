@@ -17,7 +17,7 @@ from matrix_engine import *
 from parsers import *
     
 # -----------------------------------
-# Generic Verifier
+# Verifier
 # -----------------------------------
 
 from verifiers import *
