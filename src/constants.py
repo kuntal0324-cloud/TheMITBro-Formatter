@@ -1,3 +1,7 @@
+# -----------------------------------
+# Topic Constants
+# -----------------------------------
+
 TOPIC_TRACE = "Matrix Trace"
 TOPIC_DETERMINANT = "Determinant"
 TOPIC_RANK = "Matrix Rank"
