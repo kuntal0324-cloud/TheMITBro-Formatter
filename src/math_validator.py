@@ -7,6 +7,7 @@ from sympy import Matrix
 
 TOPIC_TRACE = "Matrix Trace"
 TOPIC_DETERMINANT = "Determinant"
+TOPIC_RANK = "Matrix Rank"
 
 # -----------------------------------
 # Matrix Engine
@@ -18,6 +19,9 @@ def trace(matrix):
 
 def determinant(matrix):
     return Matrix(matrix).det()
+
+def rank(matrix):
+    return Matrix(matrix).rank()
 
 def matrix_power(matrix, power):
     return Matrix(matrix) ** power
@@ -117,9 +121,14 @@ def verify_determinant(question):
 
     return verify_numeric(question, determinant)
 
+def verify_rank(question):
+
+    return verify_numeric(question, rank)
+
 VERIFIERS = {
     TOPIC_TRACE: verify_trace,
     TOPIC_DETERMINANT: verify_determinant,
+    TOPIC_RANK: verify_rank,
 }
     
 def verify(question):
@@ -146,18 +155,17 @@ Let
 
 $$
 A=
-\\begin{bmatrix}
-2 & -1\\\\
-3 & 4
-\\end{bmatrix}
+\begin{bmatrix}
+1 & 2\\
+2 & 4
+\end{bmatrix}
 $$
 
-Find the determinant.
+Find the rank.
 
-**Correct Answer:** 11
+**Correct Answer:** 1
 
-**Concept Tested:** Determinant
-"""
+**Concept Tested:** Matrix Rank
 
     matrix = extract_matrix(question)
 
@@ -167,3 +175,4 @@ Find the determinant.
     print("Answer:", extract_answer(question))
     print("Verify:", verify(question))
     print("Topic:", extract_topic(question))
+    print("Verify:", verify(question))
