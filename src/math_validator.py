@@ -9,6 +9,7 @@ TOPIC_TRACE = "Matrix Trace"
 TOPIC_DETERMINANT = "Determinant"
 TOPIC_RANK = "Matrix Rank"
 TOPIC_NORM = "Matrix Norm"
+TOPIC_MULTIPLICATION = "Matrix Multiplication"
 
 # -----------------------------------
 # Matrix Engine
@@ -205,11 +206,28 @@ def verify_rank(question):
 
     return verify_numeric(question, rank)
 
+def verify_multiplication(question):
+
+    matrices = extract_matrices(question)
+
+    if len(matrices) < 2:
+        return False
+
+    A = matrices[0]
+    B = matrices[1]
+
+    expected = extract_answer_matrix(question)
+
+    computed = multiply(A, B)
+
+    return computed.tolist() == expected
+
 VERIFIERS = {
     TOPIC_TRACE: verify_trace,
     TOPIC_DETERMINANT: verify_determinant,
     TOPIC_RANK: verify_rank,
     TOPIC_NORM: verify_norm,
+    TOPIC_MULTIPLICATION: verify_multiplication,
 }
     
 def verify(question):
@@ -270,3 +288,4 @@ $$
 
     print("Matrices:", matrices)
     print(extract_answer_matrix(question))
+    print("Verify:", verify(question))
