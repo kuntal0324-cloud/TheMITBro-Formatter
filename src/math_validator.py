@@ -221,9 +221,9 @@ $$
 Find AB.
 """
 
-    matrix = extract_matrix(question)
+    matrices = extract_matrices(question)
 
-    print("Matrix:", matrix)
+    print("Matrices:", matrices)
     print("Norm:", norm(matrix))
     print("Trace:", trace(matrix))
     print("Det:", determinant(matrix))
