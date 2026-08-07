@@ -12,36 +12,7 @@ from verifiers import *
     
 if __name__ == "__main__":
 
-    question = r"""
-### Question
-
-Let
-
-$$
-A=
-\begin{bmatrix}
-1 & 2\\
-0 & 1
-\end{bmatrix}
-$$
-
-Find A^3.
-
-**Correct Answer:**
-
-$$
-\begin{bmatrix}
-1 & 6\\
-0 & 1
-\end{bmatrix}
-$$
-
-**Concept Tested:** Matrix Power
-"""
-
-    matrices = extract_matrices(question)
-
-    print("Matrices:", matrices)
-    print(extract_answer_matrix(question))
-    print("Verify:", verify(question))
-    print(extract_power(question))
+    print(parse_number("5"))
+    print(parse_number("-7"))
+    print(parse_number("3.14"))
+    print(parse_number("-2.75"))
