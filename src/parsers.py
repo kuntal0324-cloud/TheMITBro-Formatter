@@ -29,7 +29,6 @@ def extract_answer(question):
     return match.group(1).strip()
 
 def parse_number(value):
-    
 
 def parse_matrix(matrix_text):
     
