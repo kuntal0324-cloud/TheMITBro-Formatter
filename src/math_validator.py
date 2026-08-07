@@ -11,6 +11,7 @@ TOPIC_RANK = "Matrix Rank"
 TOPIC_NORM = "Matrix Norm"
 TOPIC_MULTIPLICATION = "Matrix Multiplication"
 TOPIC_ADDITION = "Matrix Addition"
+TOPIC_SUBTRACTION = "Matrix Subtraction"
 
 # -----------------------------------
 # Matrix Engine
@@ -37,6 +38,9 @@ def multiply(A, B):
 
 def add(A, B):
     return Matrix(A) + Matrix(B)
+
+def subtract(A, B):
+    return Matrix(A) - Matrix(B)
 
 # -----------------------------------
 # Parsers
@@ -234,6 +238,10 @@ def verify_addition(question):
 
     return verify_matrix_operation(question, add)
 
+def verify_subtraction(question):
+
+    return verify_matrix_operation(question, subtract)
+
 VERIFIERS = {
     TOPIC_TRACE: verify_trace,
     TOPIC_DETERMINANT: verify_determinant,
@@ -241,6 +249,7 @@ VERIFIERS = {
     TOPIC_NORM: verify_norm,
     TOPIC_MULTIPLICATION: verify_multiplication,
     TOPIC_ADDITION: verify_addition,
+    TOPIC_SUBTRACTION: verify_subtraction,
 }
     
 def verify(question):
