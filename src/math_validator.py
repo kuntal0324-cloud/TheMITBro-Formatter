@@ -302,16 +302,27 @@ if __name__ == "__main__":
 
 Let
 
-A =
-[1 2]
-[3 4]
+$$
+A=
+\begin{bmatrix}
+1 & 2\\
+3 & 4
+\end{bmatrix}
+$$
 
-Correct Answer:
+Find the inverse of A.
 
-[-2   1]
-[1.5 -0.5]
+**Correct Answer:**
 
-Concept Tested: Matrix Inverse
+$$
+\begin{bmatrix}
+-2 & 1\\
+1.5 & -0.5
+\end{bmatrix}
+$$
+
+**Concept Tested:** Matrix Inverse
+"""
 
     matrices = extract_matrices(question)
 
