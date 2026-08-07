@@ -36,7 +36,7 @@ def extract_topic(question):
          question
      )
 
-     if not match:
+    if not match:
          return None
 
      return match.group(1).strip()
