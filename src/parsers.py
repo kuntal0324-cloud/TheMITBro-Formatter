@@ -29,6 +29,16 @@ def extract_answer(question):
     return match.group(1).strip()
 
 def parse_number(value):
+    try:
+        return int(value)
+
+    except ValueError:
+
+        try:
+            return float(value)
+
+        except ValueError:
+            return value
 
 def parse_matrix(matrix_text):
     
