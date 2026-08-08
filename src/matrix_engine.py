@@ -45,3 +45,6 @@ def column_space(matrix):
 
 def eigenvalues(matrix):
     return Matrix(matrix).eigenvals()
+
+def eigenvectors(matrix):
+    return Matrix(matrix).eigenvects()
