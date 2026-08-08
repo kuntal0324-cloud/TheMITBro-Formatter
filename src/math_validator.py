@@ -10,33 +10,13 @@ from verifiers import *
 # Testing
 # -----------------------------------
     
-question = r"""
-### Question
+matrix = Matrix([
+    [2, 0],
+    [0, 3]
 
-Let
+    [2, 1],
+    [0, 2]
+])
 
-$$
-A=
-\begin{bmatrix}
-1 & 2\\
-2 & 4
-\end{bmatrix}
-$$
-
-Find a basis for the column space of A.
-
-**Correct Answer:**
-
-$$
-\left\{
-\begin{bmatrix}
-1\\
-2
-\end{bmatrix}
-\right\}
-$$
-
-**Concept Tested:** Matrix Column Space
-"""
-
-print("Verify:", verify(question))
+print("Eigenvalues:")
+print(eigenvalues(matrix))
