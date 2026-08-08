@@ -10,7 +10,9 @@ from verifiers import *
 # Testing
 # -----------------------------------
 
-question = r"""
+if __name__ == "__main__":
+
+    question = r"""
 ### Question
 
 Let
