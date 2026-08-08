@@ -12,32 +12,10 @@ from verifiers import *
     
 if __name__ == "__main__":
 
-    from sympy import sqrt, Rational, pi
+    from parsers import parse_number
 
-    tests = [
-
-        ("Exact",
-         [[1, 2], [3, 4]],
-         [[1, 2], [3, 4]]),
-
-        ("Decimal vs Fraction",
-         [[Rational(1, 2), 2]],
-         [[0.5, 2]]),
-
-        ("Symbolic",
-         [[sqrt(2) * sqrt(2), pi]],
-         [[2, pi]]),
-
-        ("Different",
-         [[1, 2]],
-         [[1, 3]]),
-    ]
-
-    for name, computed, expected in tests:
-
-        result = compare_matrices(
-            Matrix(computed),
-            expected
-        )
-
-        print(name, ":", result)
+print(parse_number("1.5"))
+print(parse_number("1/2"))
+print(parse_number("sqrt(2)"))
+print(parse_number("pi"))
+print(parse_number("-2"))
