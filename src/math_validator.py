@@ -10,13 +10,36 @@ from verifiers import *
 # Testing
 # -----------------------------------
 
-if __name__ == "__main__":
+question = r"""
+### Question
 
-    matrix = [
-        [2, 0],
-        [0, 2]
-    ]
+Let
 
-    result = eigenvectors(matrix)
+$$
+A=
+\begin{bmatrix}
+2 & 0\\
+0 & 2
+\end{bmatrix}
+$$
 
-    print("Eigenvectors:", result)
+Find the eigenvectors of A.
+
+**Correct Answer:**
+
+Eigenvalue 2:
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+
+Eigenvalue 2:
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+
+**Concept Tested:** Matrix Eigenvectors
+"""
+
+print("Verify:", verify_eigenvectors(question))
