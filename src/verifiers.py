@@ -372,6 +372,7 @@ VERIFIERS = {
     TOPIC_EIGENVALUES: verify_eigenvalues,
     TOPIC_EIGENVECTORS: verify_eigenvectors,
     TOPIC_CHARACTERISTIC_POLYNOMIAL: verify_characteristic_polynomial,
+    TOPIC_DIAGONALIZATION: verify_diagonalization,
 }
     
 def verify(question):
