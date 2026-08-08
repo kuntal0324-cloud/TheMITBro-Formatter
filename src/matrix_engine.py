@@ -50,4 +50,4 @@ def eigenvectors(matrix):
     return Matrix(matrix).eigenvects()
 
 def characteristic_polynomial(matrix):
-    return Matrix(matrix).charpoly().as_expr()
+    return Matrix(matrix).charpoly(symbols('x')).as_expr()
