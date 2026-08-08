@@ -37,3 +37,4 @@ $$
 """
 
 print("Parsed matrix:", extract_matrix(question))
+print("Parsed inverse:", extract_inverse(question))
