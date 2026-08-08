@@ -10,16 +10,23 @@ from verifiers import *
 # Testing
 # -----------------------------------
     
+from sympy import Matrix
+
 if __name__ == "__main__":
 
-    question = r"""
-    $$
-    A=
-    \begin{bmatrix}
-    1/2 & sqrt(2)\\
-    pi & -3.5
-    \end{bmatrix}
-    $$
-    """
+    computed = Matrix([
+        [1, 2],
+        [5, 4]
+    ])
 
-    print("Matrix:", extract_matrix(question))
+    expected = [
+        [1, 2],
+        [3, 4]
+    ]
+
+    result = matrix_comparison_details(
+        computed,
+        expected
+    )
+
+    print(result)
