@@ -36,4 +36,4 @@ $$
 **Concept Tested:** Matrix Inverse
 """
 
-print("Verify:", verify_inverse(question))
+print("Verify:", verify(question))
