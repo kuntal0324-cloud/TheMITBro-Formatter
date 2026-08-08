@@ -14,19 +14,10 @@ from sympy import Matrix
 
 if __name__ == "__main__":
 
-    computed = Matrix([
-    [1, 2],
-    [3, 4]
-])
+    matrix = Matrix([
+        [1, 2],
+        [2, 4]
+    ])
 
-expected = [
-    [1, 2, 3],
-    [4, 5, 6]
-]
-
-result = matrix_comparison_details(
-    computed,
-    expected
-)
-
-print(result)
+    print("RREF:")
+    print(rref(matrix))
