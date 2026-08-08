@@ -35,7 +35,7 @@ Eigenvalue 4:
 0
 \end{bmatrix}
 
-Eigenvalue 2:
+Eigenvalue 3:
 \begin{bmatrix}
 -1\\
 2
