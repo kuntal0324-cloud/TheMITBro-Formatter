@@ -13,23 +13,19 @@ from verifiers import *
 if __name__ == "__main__":
 
     question = r"""
-### Question
+**Correct Answer:**
 
-Let
-
-$$
-A=
+Eigenvalue 2:
 \begin{bmatrix}
-2 & 0\\
-0 & 3
+1\\
+2
 \end{bmatrix}
-$$
 
-Find the eigenvalues of A.
-
-**Correct Answer:** 2, 3
-
-**Concept Tested:** Eigenvalues
+Eigenvalue 3:
+\begin{bmatrix}
+1\\
+-1
+\end{bmatrix}
 """
 
-    print("Verify:", verify_eigenvalues(question))
+print("Eigenvectors:", extract_eigenvectors(question))
