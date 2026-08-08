@@ -25,7 +25,7 @@ $$
 
 Find the characteristic polynomial of A.
 
-**Correct Answer:**
+Latex
 
 $$
 \lambda^2 - 5\lambda + 6
