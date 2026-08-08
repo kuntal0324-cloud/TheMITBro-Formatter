@@ -49,4 +49,4 @@ $$
 
 **Concept Tested:** Matrix Diagonalization
 """
-print("Verify:", verify_diagonalization(question))
+print("Verify:", verify(question))
