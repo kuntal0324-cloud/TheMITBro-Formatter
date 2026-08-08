@@ -351,6 +351,28 @@ def verify_diagonalization(question):
     except Exception:
         return False
 
+def verify_inverse(question):
+
+    matrix = extract_matrix(question)
+    expected = extract_inverse(question)
+
+    if matrix is None or expected is None:
+        return False
+
+    try:
+        A = Matrix(matrix)
+        expected_inverse = Matrix(expected)
+
+        if A.det() == 0:
+            return False
+
+        computed_inverse = A.inv()
+
+        return computed_inverse == expected_inverse
+
+    except Exception:
+        return False
+
 # -----------------------------------
 # Dispatcher
 # -----------------------------------
