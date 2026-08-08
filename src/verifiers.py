@@ -345,6 +345,7 @@ VERIFIERS = {
     TOPIC_COLUMN_SPACE: verify_column_space,
     TOPIC_EIGENVALUES: verify_eigenvalues,
     TOPIC_EIGENVECTORS: verify_eigenvectors,
+    TOPIC_CHARACTERISTIC_POLYNOMIAL: verify_characteristic_polynomial,
 }
     
 def verify(question):
