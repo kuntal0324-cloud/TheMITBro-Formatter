@@ -49,20 +49,4 @@ $$
 
 **Concept Tested:** Matrix Diagonalization
 """
-print("Parsed diagonalization:", extract_diagonalization(question))
-
-matrix = extract_matrix(question)
-
-P, D = diagonalize_matrix(matrix)
-
-print("P:")
-print(P)
-
-print("D:")
-print(D)
-
-print("Reconstructed:")
-print(P * D * P.inv())
-
-print("Verify:", P * D * P.inv() == Matrix(matrix))
-
+print("Verify:", verify_diagonalization(question))
