@@ -279,6 +279,12 @@ def extract_inverse(question):
 
     matrix_text = match.group(1).strip()
 
-    return parse_matrix(matrix_text)
+    # Convert LaTeX fractions to ordinary mathematical fractions
+    matrix_text = re.sub(
+        r"\\frac\s*\{([^{}]+)\}\s*\{([^{}]+)\}",
+        r"(\1)/(\2)",
+        matrix_text
+    )
 
+    return parse_matrix(matrix_text)
 
