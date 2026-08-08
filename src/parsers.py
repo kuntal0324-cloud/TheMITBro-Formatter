@@ -181,6 +181,6 @@ def extract_eigenvectors(question):
 
         vector = parse_matrix(vector_text)
 
-        parsed[eigenvalue] = vector
+        parsed.setdefault(eigenvalue, []).append(vector)
 
     return parsed
