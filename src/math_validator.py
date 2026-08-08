@@ -31,8 +31,8 @@ Find the eigenvectors of A.
 
 Eigenvalue 4:
 \begin{bmatrix}
+2\\
 0
-1\\
 \end{bmatrix}
 
 Eigenvalue 2:
