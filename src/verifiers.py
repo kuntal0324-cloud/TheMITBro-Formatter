@@ -289,14 +289,11 @@ def verify_eigenvectors(question):
     for eigenvalue in computed:
 
         computed_vectors = computed[eigenvalue]
-        expected_vector = expected[eigenvalue]
+        expected_vectors = expected[eigenvalue]
 
-        if len(computed_vectors) != 1:
-            return False
-
-        if not compare_eigenvectors(
-            computed_vectors[0],
-            expected_vector
+        if not compare_matrix_lists(
+            computed_vectors,
+            expected_vectors
         ):
             return False
 
