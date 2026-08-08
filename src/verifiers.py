@@ -207,6 +207,7 @@ VERIFIERS = {
     TOPIC_INVERSE: verify_inverse,
     TOPIC_POWER: verify_power,
     TOPIC_RREF: verify_rref,
+    TOPIC_NULLSPACE: verify_nullspace,
 }
     
 def verify(question):
