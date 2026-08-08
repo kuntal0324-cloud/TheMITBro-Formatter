@@ -32,13 +32,13 @@ Find the eigenvectors of A.
 Eigenvalue 2:
 
 \begin{bmatrix}
-1\\
-0
+0\\
+1
 \end{bmatrix}
 
 \begin{bmatrix}
-0\\
-1
+1\\
+0
 \end{bmatrix}
 
 **Concept Tested:** Matrix Eigenvectors
