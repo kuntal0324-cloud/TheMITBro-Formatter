@@ -217,7 +217,20 @@ def verify_eigenvalues(question):
 
     computed = eigenvalues(matrix)
 
+    computed = expand_eigenvalues(computed)
+
     return computed == expected
+
+def expand_eigenvalues(eigenvalue_dict):
+
+    values = []
+
+    for eigenvalue, multiplicity in eigenvalue_dict.items():
+
+        for _ in range(multiplicity):
+            values.append(eigenvalue)
+
+    return values
 
 # -----------------------------------
 # Dispatcher
