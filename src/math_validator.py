@@ -12,57 +12,11 @@ from verifiers import *
 
 if __name__ == "__main__":
 
-    question = r"""
-### Question
+    matrix = [
+        [2, 0],
+        [0, 2]
+    ]
 
-Let
+    result = eigenvectors(matrix)
 
-$$
-A=
-\begin{bmatrix}
-2 & 0\\
-0 & 3
-\end{bmatrix}
-$$
-
-Find the eigenvectors of A.
-
-**Correct Answer:**
-
-Eigenvalue 2:
-\begin{bmatrix}
-1\\
-0
-\end{bmatrix}
-
-Eigenvalue 3:
-\begin{bmatrix}
-0\\
-1
-\end{bmatrix}
-
-**Concept Tested:** Matrix Eigenvectors
-"""
-
-    matrix = extract_matrix(question)
-    expected = extract_eigenvectors(question)
-    raw = eigenvectors(matrix)
-
-    print("Matrix:", matrix)
-    print("Expected:", expected)
-    print("Raw:", raw)
-
-    computed = {}
-
-    for eigenvalue, multiplicity, vectors in raw:
-        computed[eigenvalue] = [
-            vector.tolist()
-            for vector in vectors
-        ]
-
-    print("Computed:", computed)
-
-    print("Keys expected:", set(expected.keys()))
-    print("Keys computed:", set(computed.keys()))
-
-    print("Verify:", verify_eigenvectors(question))
+    print("Eigenvectors:", result)
