@@ -20,8 +20,8 @@ Let
 $$
 A=
 \begin{bmatrix}
-2 & 0\\
-0 & 2
+4 & 2\\
+1 & 3
 \end{bmatrix}
 $$
 
@@ -29,16 +29,16 @@ Find the eigenvectors of A.
 
 **Correct Answer:**
 
-Eigenvalue 2:
-
+Eigenvalue 5:
 \begin{bmatrix}
-0\\
+2\\
 1
 \end{bmatrix}
 
+Eigenvalue 2:
 \begin{bmatrix}
-1\\
-0
+-1\\
+1
 \end{bmatrix}
 
 **Concept Tested:** Matrix Eigenvectors
