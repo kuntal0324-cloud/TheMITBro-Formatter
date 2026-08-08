@@ -12,8 +12,12 @@ from verifiers import *
     
 if __name__ == "__main__":
 
-    question = r"""
-**Correct Answer:** 2, 3, 5, 5
-"""
+    matrix = Matrix([
+        [2, 0],
+        [0, 3]
+    ])
 
-    print("Eigenvalues:", extract_eigenvalues(question))
+    result = eigenvalues(matrix)
+
+    print("Raw:", result)
+    print("Expanded:", expand_eigenvalues(result))
