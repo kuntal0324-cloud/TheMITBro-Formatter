@@ -191,6 +191,24 @@ def verify_nullspace(question):
         expected
     )
 
+def verify_column_space(question):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_answer_matrices(question)
+
+    computed = column_space(matrix)
+
+    computed_vectors = [
+        vector.tolist()
+        for vector in computed
+    ]
+
+    return compare_matrix_lists(
+        computed_vectors,
+        expected
+    )
+
 # -----------------------------------
 # Dispatcher
 # -----------------------------------
@@ -208,6 +226,7 @@ VERIFIERS = {
     TOPIC_POWER: verify_power,
     TOPIC_RREF: verify_rref,
     TOPIC_NULLSPACE: verify_nullspace,
+    TOPIC_COLUMN_SPACE: verify_column_space,
 }
     
 def verify(question):
