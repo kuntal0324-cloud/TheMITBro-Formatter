@@ -64,3 +64,5 @@ print("Reconstructed:")
 print(P * D * P.inv())
 
 print("Verify:", P * D * P.inv() == Matrix(matrix))
+
+print("Parsed diagonalization:", extract_diagonalization(question))
