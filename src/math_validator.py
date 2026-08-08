@@ -12,5 +12,5 @@ from verifiers import *
 
 print(compare_eigenvectors(
     [[1], [2]],
-    [[2], [4]]
+    [[1], [-2]]
 ))
