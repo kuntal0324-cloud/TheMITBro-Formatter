@@ -51,3 +51,6 @@ def eigenvectors(matrix):
 
 def characteristic_polynomial(matrix):
     return Matrix(matrix).charpoly(symbols('x')).as_expr()
+
+def diagonalize_matrix(matrix):
+    return Matrix(matrix).diagonalize()
