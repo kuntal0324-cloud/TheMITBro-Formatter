@@ -261,3 +261,24 @@ def extract_diagonalization(question):
     D = parse_matrix(d_text)
 
     return P, D
+
+def extract_inverse(question):
+
+    match = re.search(
+        r"\*\*Correct Answer:\*\*\s*"
+        r"\$\$\s*"
+        r"A\^\{-1\}\s*=\s*"
+        r"\\begin\{bmatrix\}(.*?)\\end\{bmatrix\}"
+        r"\s*\$\$",
+        question,
+        flags=re.DOTALL
+    )
+
+    if not match:
+        return None
+
+    matrix_text = match.group(1).strip()
+
+    return parse_matrix(matrix_text)
+
+
