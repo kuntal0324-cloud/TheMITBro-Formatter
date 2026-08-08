@@ -247,7 +247,17 @@ def extract_diagonalization(question):
     if not p_match or not d_match:
         return None
 
-    P = parse_matrix(p_match.group(1))
-    D = parse_matrix(d_match.group(1))
+    p_text = p_match.group(1).strip()
+    d_text = d_match.group(1).strip()
+
+    # Remove LaTeX matrix wrappers
+    p_text = re.sub(r"\\begin\{bmatrix\}", "", p_text)
+    p_text = re.sub(r"\\end\{bmatrix\}", "", p_text)
+
+    d_text = re.sub(r"\\begin\{bmatrix\}", "", d_text)
+    d_text = re.sub(r"\\end\{bmatrix\}", "", d_text)
+
+    P = parse_matrix(p_text)
+    D = parse_matrix(d_text)
 
     return P, D
