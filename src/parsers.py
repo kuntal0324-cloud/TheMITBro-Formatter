@@ -213,6 +213,20 @@ def extract_characteristic_polynomial(question):
     expression = expression.replace(r"\lambda", "x")
     expression = expression.replace("lambda", "x")
 
-    return sympify(expression)
+    from sympy.parsing.sympy_parser import (
+        parse_expr,
+        standard_transformations,
+        implicit_multiplication,
+        convert_xor
+    )
 
+    transformations = (
+        standard_transformations
+        + (implicit_multiplication, convert_xor)
+    )
+
+    return parse_expr(
+        expression,
+        transformations=transformations
+    )
 
