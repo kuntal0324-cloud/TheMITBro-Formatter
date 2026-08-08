@@ -33,3 +33,6 @@ def transpose(matrix):
 
 def inverse(matrix):
     return Matrix(matrix).inv()
+
+def rref(matrix):
+    return Matrix(matrix).rref()[0]
