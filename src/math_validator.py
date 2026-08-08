@@ -43,3 +43,5 @@ Eigenvalue 2:
 
 **Concept Tested:** Matrix Eigenvectors
 """
+
+print("Verify:", verify(question))
