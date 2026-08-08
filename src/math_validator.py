@@ -15,18 +15,18 @@ from sympy import Matrix
 if __name__ == "__main__":
 
     computed = Matrix([
-        [1, 2],
-        [5, 4]
-    ])
+    [1, 2],
+    [3, 4]
+])
 
-    expected = [
-        [1, 2],
-        [3, 4]
-    ]
+expected = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
 
-    result = matrix_comparison_details(
-        computed,
-        expected
-    )
+result = matrix_comparison_details(
+    computed,
+    expected
+)
 
-    print(result)
+print(result)
