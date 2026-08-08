@@ -45,14 +45,17 @@ def parse_number(value):
     return sympify(value)
 
 def parse_matrix(matrix_text):
-    
-        rows = re.split(r"\\{1,2}|\n", matrix_text)
+
+    rows = re.split(r"\\{1,2}|\n", matrix_text)
 
     cleaned = []
 
     for row in rows:
 
         row = row.strip()
+
+        if not row:
+            continue
 
         values = row.split("&")
 
