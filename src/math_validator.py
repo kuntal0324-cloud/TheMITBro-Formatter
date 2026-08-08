@@ -10,18 +10,30 @@ from verifiers import *
 # Testing
 # -----------------------------------
 
-matrix = [
-    [4, 7],
-    [2, 6]
-]
+question = r"""
+### Question
 
-A = Matrix(matrix)
-A_inv = inverse_matrix(matrix)
+Find the inverse of the matrix
 
-print("Inverse:")
-print(A_inv)
+$$
+A=
+\begin{bmatrix}
+4 & 7\\
+2 & 6
+\end{bmatrix}
+$$
 
-print("A * A_inv:")
-print(A * A_inv)
+**Correct Answer:**
 
-print("Verify:", A * A_inv == Matrix.eye(A.rows))
+$$
+A^{-1}=
+\begin{bmatrix}
+\frac{3}{5} & -\frac{7}{10}\\
+-\frac{1}{5} & \frac{2}{5}
+\end{bmatrix}
+$$
+
+**Concept Tested:** Matrix Inverse
+"""
+
+print("Parsed matrix:", extract_matrix(question))
