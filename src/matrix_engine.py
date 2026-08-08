@@ -42,3 +42,6 @@ def nullspace(matrix):
 
 def column_space(matrix):
     return Matrix(matrix).columnspace()
+
+def eigenvalues(matrix):
+    return Matrix(matrix).eigenvals()
