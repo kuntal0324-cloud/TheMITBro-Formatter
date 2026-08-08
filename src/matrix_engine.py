@@ -39,3 +39,6 @@ def rref(matrix):
 
 def nullspace(matrix):
     return Matrix(matrix).nullspace()
+
+def column_space(matrix):
+    return Matrix(matrix).columnspace()
