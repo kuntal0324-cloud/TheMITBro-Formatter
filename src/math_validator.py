@@ -20,7 +20,7 @@ Let
 $$
 A=
 \begin{bmatrix}
-4 & 1\\
+2 & 0\\
 0 & 2
 \end{bmatrix}
 $$
@@ -29,19 +29,17 @@ Find the eigenvectors of A.
 
 **Correct Answer:**
 
-Eigenvalue 4:
+Eigenvalue 2:
+
 \begin{bmatrix}
-2\\
+1\\
 0
 \end{bmatrix}
 
-Eigenvalue 3:
 \begin{bmatrix}
--1\\
-2
+0\\
+1
 \end{bmatrix}
 
 **Concept Tested:** Matrix Eigenvectors
 """
-
-print("Verify:", verify(question))
