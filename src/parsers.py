@@ -46,7 +46,7 @@ def parse_number(value):
 
 def parse_matrix(matrix_text):
     
-    rows = matrix_text.split("\\\\")
+        rows = re.split(r"\\{1,2}|\n", matrix_text)
 
     cleaned = []
 
