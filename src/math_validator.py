@@ -10,28 +10,23 @@ from verifiers import *
 # Testing
 # -----------------------------------
 
-question = r"""
-### Question
+matrix = [
+    [2, 0],
+    [0, 3]
+]
 
-Let
+P, D = diagonalize_matrix(matrix)
 
-$$
-A=
-\begin{bmatrix}
-2 & 0\\
-0 & 3
-\end{bmatrix}
-$$
+print("P:")
+print(P)
 
-Find the characteristic polynomial of A.
+print("D:")
+print(D)
 
-**Correct Answer**
+print("Reconstructed:")
+print(P * D * P.inv())
 
-$$
-\lambda^2 - 5\lambda + 6
-$$
+print("Original:")
+print(Matrix(matrix))
 
-**Concept Tested:** Matrix Characteristic Polynomial
-"""
-
-print("Verify:", verify(question))
+print("Verify:", P * D * P.inv() == Matrix(matrix))
