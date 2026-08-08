@@ -27,6 +27,37 @@ def compare_matrices(computed, expected):
 
     return True
 
+def matrix_comparison_details(computed, expected):
+
+    if computed.shape != (len(expected), len(expected[0])):
+        return {
+            "valid": False,
+            "reason": "Matrix dimensions do not match",
+            "computed": computed.tolist(),
+            "expected": expected,
+        }
+
+    for i in range(computed.rows):
+        for j in range(computed.cols):
+
+            difference = simplify(
+                computed[i, j] - expected[i][j]
+            )
+
+            if difference != 0:
+                return {
+                    "valid": False,
+                    "reason": "Matrix values do not match",
+                    "row": i,
+                    "column": j,
+                    "computed": computed[i, j],
+                    "expected": expected[i][j],
+                }
+
+    return {
+        "valid": True
+    }
+
 def verify_numeric(question, solver):
 
     matrix = extract_matrix(question)
