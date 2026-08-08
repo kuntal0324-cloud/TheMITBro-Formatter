@@ -277,6 +277,7 @@ def verify_eigenvectors(question):
     computed = {}
 
     for eigenvalue, multiplicity, vectors in computed_raw:
+
         computed[eigenvalue] = [
             vector.tolist()
             for vector in vectors
@@ -288,14 +289,14 @@ def verify_eigenvectors(question):
     for eigenvalue in computed:
 
         computed_vectors = computed[eigenvalue]
-        expected_vectors = [expected[eigenvalue]]
+        expected_vector = expected[eigenvalue]
 
-        if len(computed_vectors) != len(expected_vectors):
+        if len(computed_vectors) != 1:
             return False
 
-        if not any(
-            compare_eigenvectors(computed_vectors[0], expected_vectors[0])
-            for _ in [0]
+        if not compare_eigenvectors(
+            computed_vectors[0],
+            expected_vector
         ):
             return False
 
