@@ -36,5 +36,4 @@ $$
 **Concept Tested:** Matrix Inverse
 """
 
-print("Parsed matrix:", extract_matrix(question))
-print("Parsed inverse:", extract_inverse(question))
+print("Verify:", verify_inverse(question))
