@@ -209,6 +209,16 @@ def verify_column_space(question):
         expected
     )
 
+def verify_eigenvalues(question):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_eigenvalues(question)
+
+    computed = eigenvalues(matrix)
+
+    return computed == expected
+
 # -----------------------------------
 # Dispatcher
 # -----------------------------------
@@ -227,6 +237,7 @@ VERIFIERS = {
     TOPIC_RREF: verify_rref,
     TOPIC_NULLSPACE: verify_nullspace,
     TOPIC_COLUMN_SPACE: verify_column_space,
+    TOPIC_EIGENVALUES: verify_eigenvalues,
 }
     
 def verify(question):
