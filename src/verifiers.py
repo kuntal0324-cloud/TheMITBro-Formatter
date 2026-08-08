@@ -318,6 +318,7 @@ VERIFIERS = {
     TOPIC_NULLSPACE: verify_nullspace,
     TOPIC_COLUMN_SPACE: verify_column_space,
     TOPIC_EIGENVALUES: verify_eigenvalues,
+    TOPIC_EIGENVECTORS: verify_eigenvectors,
 }
     
 def verify(question):
