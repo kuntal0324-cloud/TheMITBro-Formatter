@@ -196,3 +196,14 @@ def extract_eigenvectors(question):
             parsed[eigenvalue].append(vector)
 
     return parsed
+
+def extract_characteristic_polynomial(question):
+
+    answer = extract_answer(question)
+
+    if answer is None:
+        return None
+
+    return sympify(answer.strip())
+
+
