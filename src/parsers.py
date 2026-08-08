@@ -199,11 +199,20 @@ def extract_eigenvectors(question):
 
 def extract_characteristic_polynomial(question):
 
-    answer = extract_answer(question)
+    match = re.search(
+        r"\*\*Correct Answer:\*\*\s*\$\$(.*?)\$\$",
+        question,
+        flags=re.DOTALL
+    )
 
-    if answer is None:
+    if not match:
         return None
 
-    return sympify(answer.strip())
+    expression = match.group(1).strip()
+
+    expression = expression.replace(r"\lambda", "x")
+    expression = expression.replace("lambda", "x")
+
+    return sympify(expression)
 
 
