@@ -54,3 +54,6 @@ def characteristic_polynomial(matrix):
 
 def diagonalize_matrix(matrix):
     return Matrix(matrix).diagonalize()
+
+def inverse_matrix(matrix):
+    return Matrix(matrix).inv()
