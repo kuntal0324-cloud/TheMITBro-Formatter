@@ -177,7 +177,7 @@ def verify_nullspace(question):
 
     matrix = extract_matrix(question)
 
-    expected = extract_matrices(question)
+    expected = extract_answer_matrices(question)
 
     computed = nullspace(matrix)
 
