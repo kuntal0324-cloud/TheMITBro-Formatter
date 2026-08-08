@@ -8,6 +8,10 @@ from parsers import *
 # Generic Verifier
 # -----------------------------------
 
+def compare_matrices(computed, expected):
+
+    return computed.tolist() == expected
+
 def verify_numeric(question, solver):
 
     matrix = extract_matrix(question)
@@ -51,7 +55,7 @@ def verify_single_matrix_operation(question, solver):
 
     computed = solver(matrix)
 
-    return computed.tolist() == expected
+    return compare_matrices(computed, expected)
 
 def verify_matrix_operation(question, solver):
 
@@ -67,7 +71,7 @@ def verify_matrix_operation(question, solver):
 
     computed = solver(A, B)
 
-    return computed.tolist() == expected
+    return compare_matrices(computed, expected)
 
 def verify_multiplication(question):
 
@@ -95,7 +99,7 @@ def verify_power(question):
 
     computed = matrix_power(matrix, power)
 
-    return computed.tolist() == expected
+    return compare_matrices(computed, expected)
 
 def verify_inverse(question):
 
