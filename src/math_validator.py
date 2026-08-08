@@ -11,28 +11,29 @@ from verifiers import *
 # -----------------------------------
 
 if __name__ == "__main__":
-    ### Question
-    Let
+    question = r"""
+### Question
 
-    $$
-    A=
-    \begin{bmatrix}
-    2 & 0\\
-    0 & 3
-    \end{bmatrix}
-    $$
+Let
 
-    Find the characteristic polynomial of A.
+$$
+A=
+\begin{bmatrix}
+2 & 0\\
+0 & 3
+\end{bmatrix}
+$$
 
-    **Correct Answer:**
+Find the characteristic polynomial of A.
 
-    $$
-    \lambda^2-5\lambda+6
-    $$
+**Correct Answer:**
 
-    **Concept Tested:** Matrix Characteristic Polynomial
-    """
+$$
+\lambda^2-5\lambda+6
+$$
 
+**Concept Tested:** Matrix Characteristic Polynomial
+"""
 print("Expected:", extract_characteristic_polynomial(question))
 print("Computed:", characteristic_polynomial(extract_matrix(question)))
 print("Verify:", verify_characteristic_polynomial(question))
