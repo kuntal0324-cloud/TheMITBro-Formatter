@@ -10,43 +10,18 @@ from verifiers import *
 # Testing
 # -----------------------------------
 
-question = r"""
-### Question
+matrix = [
+    [4, 7],
+    [2, 6]
+]
 
-Diagonalize the matrix
+A = Matrix(matrix)
+A_inv = inverse_matrix(matrix)
 
-$$
-A=
-\begin{bmatrix}
-4 & 1\\
-2 & 3
-\end{bmatrix}
-$$
+print("Inverse:")
+print(A_inv)
 
-Find matrices P and D such that
+print("A * A_inv:")
+print(A * A_inv)
 
-$$
-A=PDP^{-1}
-$$
-
-**Correct Answer:**
-
-P =
-$$
-\begin{bmatrix}
--1 & 1\\
-2 & 1
-\end{bmatrix}
-$$
-
-D =
-$$
-\begin{bmatrix}
-2 & 0\\
-0 & 5
-\end{bmatrix}
-$$
-
-**Concept Tested:** Matrix Diagonalization
-"""
-print("Verify:", verify(question))
+print("Verify:", A * A_inv == Matrix.eye(A.rows))
