@@ -15,33 +15,26 @@ if __name__ == "__main__":
     question = r"""
 ### Question
 
-Let
+Find the characteristic polynomial of
 
 $$
 A=
 \begin{bmatrix}
-4 & 2\\
-1 & 3
+2 & 0\\
+0 & 3
 \end{bmatrix}
 $$
 
-Find the eigenvectors of A.
-
 **Correct Answer:**
 
-Eigenvalue 5:
-\begin{bmatrix}
-2\\
-1
-\end{bmatrix}
+$$
+\lambda^2-5\lambda+6
+$$
 
-Eigenvalue 2:
-\begin{bmatrix}
--1\\
-1
-\end{bmatrix}
-
-**Concept Tested:** Matrix Eigenvectors
+**Concept Tested:** Characteristic Polynomial
 """
 
-print("Verify:", verify(question))
+matrix = [[2, 0], [0, 3]]
+
+print("Characteristic Polynomial:",
+      characteristic_polynomial(matrix))
