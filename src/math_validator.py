@@ -13,35 +13,35 @@ from verifiers import *
 if __name__ == "__main__":
 
     question = r"""
-    ### Question
+### Question
 
-    Let
+Let
 
-    $$
-    A=
-    \begin{bmatrix}
-    2 & 0\\
-    0 & 2
-    \end{bmatrix}
-    $$
+$$
+A=
+\begin{bmatrix}
+2 & 0\\
+0 & 2
+\end{bmatrix}
+$$
 
-    Find the eigenvectors of A.
+Find the eigenvectors of A.
 
-    **Correct Answer:**
+**Correct Answer:**
 
-    Eigenvalue 2:
-    \begin{bmatrix}
-    1\\
-    0
-    \end{bmatrix}
+Eigenvalue 2:
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
 
-    Eigenvalue 2:
-    \begin{bmatrix}
-    0\\
-    1
-    \end{bmatrix}
+Eigenvalue 2:
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
 
-    **Concept Tested:** Matrix Eigenvectors
-    """
+**Concept Tested:** Matrix Eigenvectors
+"""
 
-print("Verify:", verify_eigenvectors(question))
+    print("Verify:", verify_eigenvectors(question))
