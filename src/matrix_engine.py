@@ -36,3 +36,6 @@ def inverse(matrix):
 
 def rref(matrix):
     return Matrix(matrix).rref()[0]
+
+def nullspace(matrix):
+    return Matrix(matrix).nullspace()
