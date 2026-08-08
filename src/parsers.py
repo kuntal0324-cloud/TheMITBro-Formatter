@@ -229,3 +229,25 @@ def extract_characteristic_polynomial(question):
         expression,
         transformations=transformations
     )
+
+def extract_diagonalization(question):
+
+    p_match = re.search(
+        r"P\s*=\s*\$\$(.*?)\$\$",
+        question,
+        flags=re.DOTALL
+    )
+
+    d_match = re.search(
+        r"D\s*=\s*\$\$(.*?)\$\$",
+        question,
+        flags=re.DOTALL
+    )
+
+    if not p_match or not d_match:
+        return None
+
+    P = parse_matrix(p_match.group(1))
+    D = parse_matrix(d_match.group(1))
+
+    return P, D
