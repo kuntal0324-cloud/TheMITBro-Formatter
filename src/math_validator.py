@@ -34,6 +34,4 @@ $$
 **Concept Tested:** Matrix Characteristic Polynomial
 """
 
-print("Expected:", extract_characteristic_polynomial(question))
-print("Computed:", characteristic_polynomial(extract_matrix(question)))
-print("Verify:", verify_characteristic_polynomial(question))
+print("Verify:", verify(question))
