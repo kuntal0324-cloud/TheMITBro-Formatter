@@ -57,3 +57,6 @@ def diagonalize_matrix(matrix):
 
 def inverse_matrix(matrix):
     return Matrix(matrix).inv()
+
+def matrix_rank(matrix):
+    return Matrix(matrix).rank()
