@@ -325,6 +325,32 @@ def verify_characteristic_polynomial(question):
 
     return computed == expected
 
+def verify_diagonalization(question):
+
+    matrix = extract_matrix(question)
+
+    result = extract_diagonalization(question)
+
+    if result is None:
+        return False
+
+    P, D = result
+
+    try:
+        A = Matrix(matrix)
+        P = Matrix(P)
+        D = Matrix(D)
+
+        if P.det() == 0:
+            return False
+
+        reconstructed = P * D * P.inv()
+
+        return reconstructed == A
+
+    except Exception:
+        return False
+
 # -----------------------------------
 # Dispatcher
 # -----------------------------------
