@@ -200,7 +200,7 @@ def extract_eigenvectors(question):
 def extract_characteristic_polynomial(question):
 
     match = re.search(
-        r"\*\*Correct Answer:\*\*\s*\$\$(.*?)\$\$",
+        r"\*\*Correct Answer\**\s*:?\s*(?:\$\$)?\s*(.*?)\s*(?:\$\$)?\s*(?=\*\*Concept Tested|\Z)",
         question,
         flags=re.DOTALL
     )
@@ -219,7 +219,6 @@ def extract_characteristic_polynomial(question):
         implicit_multiplication,
         convert_xor
     )
-    
 
     transformations = (
         standard_transformations
@@ -230,4 +229,3 @@ def extract_characteristic_polynomial(question):
         expression,
         transformations=transformations
     )
-
