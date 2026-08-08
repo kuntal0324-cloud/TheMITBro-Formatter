@@ -1,4 +1,4 @@
-from sympy import Matrix
+from sympy import Matrix, symbols
 
 # -----------------------------------
 # Matrix Engine
