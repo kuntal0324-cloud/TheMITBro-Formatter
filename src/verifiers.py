@@ -315,6 +315,16 @@ def verify_eigenvectors(question):
 
     return True
 
+def verify_characteristic_polynomial(question):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_characteristic_polynomial(question)
+
+    computed = characteristic_polynomial(matrix)
+
+    return computed == expected
+
 # -----------------------------------
 # Dispatcher
 # -----------------------------------
