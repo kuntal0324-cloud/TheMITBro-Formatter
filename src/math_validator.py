@@ -11,8 +11,8 @@ from verifiers import *
 # -----------------------------------
 
 matrix = [
-    [2, 0],
-    [0, 3]
+    [4, 1],
+    [2, 3]
 ]
 
 P, D = diagonalize_matrix(matrix)
