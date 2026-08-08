@@ -148,3 +148,18 @@ def extract_answer_matrices(question):
         parse_matrix(matrix_text)
         for matrix_text in matches
     ]
+
+def extract_eigenvalues(question):
+
+    answer = extract_answer(question)
+
+    if answer is None:
+        return None
+
+    values = [
+        parse_number(value.strip())
+        for value in answer.split(",")
+        if value.strip()
+    ]
+
+    return values
