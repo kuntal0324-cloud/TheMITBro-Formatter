@@ -29,7 +29,18 @@ def extract_answer(question):
 
     return match.group(1).strip()
 
+def is_valid_number_expression(value):
+
+    pattern = r"^[0-9+\-*/().,\s_a-zA-Z]+$"
+
+    return re.fullmatch(pattern, value) is not None
+
 def parse_number(value):
+
+    value = value.strip()
+
+    if not is_valid_number_expression(value):
+        raise ValueError("Invalid mathematical expression")
 
     return sympify(value)
 
