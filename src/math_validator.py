@@ -12,10 +12,7 @@ from verifiers import *
     
 if __name__ == "__main__":
 
-    from parsers import parse_number
-
-print(parse_number("1.5"))
-print(parse_number("1/2"))
-print(parse_number("sqrt(2)"))
-print(parse_number("pi"))
-print(parse_number("-2"))
+    try:
+    print(parse_number("abc@@"))
+except Exception as e:
+    print("Invalid input handled:", type(e).__name__)
