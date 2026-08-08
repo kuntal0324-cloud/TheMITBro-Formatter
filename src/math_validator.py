@@ -25,10 +25,10 @@ $$
 
 Find the characteristic polynomial of A.
 
-Latex
+**Correct Answer**
 
 $$
-\lambda^2 - 4\lambda + 6
+\lambda^2 - 5\lambda + 6
 $$
 
 **Concept Tested:** Matrix Characteristic Polynomial
