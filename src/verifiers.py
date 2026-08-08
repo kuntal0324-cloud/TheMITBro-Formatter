@@ -266,6 +266,41 @@ def compare_eigenvectors(computed, expected):
         for ratio in ratios
     )
 
+def verify_eigenvectors(question):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_eigenvectors(question)
+
+    computed_raw = eigenvectors(matrix)
+
+    computed = {}
+
+    for eigenvalue, multiplicity, vectors in computed_raw:
+        computed[eigenvalue] = [
+            vector.tolist()
+            for vector in vectors
+        ]
+
+    if set(computed.keys()) != set(expected.keys()):
+        return False
+
+    for eigenvalue in computed:
+
+        computed_vectors = computed[eigenvalue]
+        expected_vectors = [expected[eigenvalue]]
+
+        if len(computed_vectors) != len(expected_vectors):
+            return False
+
+        if not any(
+            compare_eigenvectors(computed_vectors[0], expected_vectors[0])
+            for _ in [0]
+        ):
+            return False
+
+    return True
+
 # -----------------------------------
 # Dispatcher
 # -----------------------------------
