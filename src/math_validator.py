@@ -43,8 +43,5 @@ Eigenvalue 2:
 
 **Concept Tested:** Matrix Eigenvectors
 """
-print("Expected:", extract_eigenvectors(question))
 
-matrix = extract_matrix(question)
-
-print("Computed raw:", eigenvectors(matrix))
+print("Verify:", verify(question))
