@@ -10,10 +10,10 @@ from verifiers import *
 # Testing
 # -----------------------------------
     
-matrix = Matrix([
-    [2, 1],
-    [0, 2]
-])
+if __name__ == "__main__":
 
-print("Eigenvalues:")
-print(eigenvalues(matrix))
+    question = r"""
+**Correct Answer:** 2, 3, 5, 5
+"""
+
+    print("Eigenvalues:", extract_eigenvalues(question))
