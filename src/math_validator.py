@@ -20,7 +20,7 @@ Let
 $$
 A=
 \begin{bmatrix}
-2 & 0\\
+4 & 1\\
 0 & 2
 \end{bmatrix}
 $$
@@ -29,7 +29,7 @@ Find the eigenvectors of A.
 
 **Correct Answer:**
 
-Eigenvalue 2:
+Eigenvalue 4:
 \begin{bmatrix}
 1\\
 0
@@ -37,11 +37,9 @@ Eigenvalue 2:
 
 Eigenvalue 2:
 \begin{bmatrix}
-0\\
-1
+-1\\
+2
 \end{bmatrix}
 
 **Concept Tested:** Matrix Eigenvectors
 """
-
-print("Verify:", verify_eigenvectors(question))
