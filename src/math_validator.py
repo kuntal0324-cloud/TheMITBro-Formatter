@@ -12,12 +12,24 @@ from verifiers import *
 
 if __name__ == "__main__":
 
-    matrix = Matrix([
-    [2, 1],
-    [0, 2]
-])
+    question = r"""
+### Question
 
-result = eigenvalues(matrix)
+Let
 
-print("Raw:", result)
-print("Expanded:", expand_eigenvalues(result))
+$$
+A=
+\begin{bmatrix}
+2 & 0\\
+0 & 3
+\end{bmatrix}
+$$
+
+Find the eigenvalues of A.
+
+**Correct Answer:** 2, 3
+
+**Concept Tested:** Eigenvalues
+"""
+
+    print("Verify:", verify_eigenvalues(question))
