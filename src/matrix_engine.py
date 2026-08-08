@@ -48,3 +48,6 @@ def eigenvalues(matrix):
 
 def eigenvectors(matrix):
     return Matrix(matrix).eigenvects()
+
+def characteristic_polynomial(matrix):
+    return Matrix(matrix).charpoly().as_expr()
