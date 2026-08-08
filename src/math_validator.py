@@ -10,7 +10,40 @@ from verifiers import *
 # Testing
 # -----------------------------------
 
-print(compare_eigenvectors(
-    [[1], [2]],
-    [[1], [-2]]
-))
+question = r"""
+### Question
+
+Let
+
+$$
+A=
+\begin{bmatrix}
+2 & 0\\
+0 & 3
+\end{bmatrix}
+$$
+
+Find the eigenvectors of A.
+
+**Correct Answer:**
+
+Eigenvalue 2:
+\[
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+\]
+
+Eigenvalue 3:
+\[
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+\]
+
+**Concept Tested:** Matrix Eigenvectors
+"""
+
+print("Verify:", verify_eigenvectors(question))
