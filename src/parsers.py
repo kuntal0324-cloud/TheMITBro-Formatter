@@ -169,21 +169,30 @@ def extract_eigenvalues(question):
 
 def extract_eigenvectors(question):
 
-    matches = re.findall(
-        r"Eigenvalue\s+([^\s:]+)\s*:\s*"
-        r"\\begin{bmatrix}(.*?)\\end{bmatrix}",
+    blocks = re.findall(
+        r"Eigenvalue\s+([^\s:]+)\s*:\s*(.*?)(?=Eigenvalue\s+|\*\*Concept Tested:\*\*|$)",
         question,
         flags=re.DOTALL
     )
 
     parsed = {}
 
-    for eigenvalue_text, vector_text in matches:
+    for eigenvalue_text, block_text in blocks:
 
         eigenvalue = parse_number(eigenvalue_text)
 
-        vector = parse_matrix(vector_text)
+        vectors = re.findall(
+            r"\\begin{bmatrix}(.*?)\\end{bmatrix}",
+            block_text,
+            flags=re.DOTALL
+        )
 
-        parsed.setdefault(eigenvalue, []).append(vector)
+        parsed[eigenvalue] = []
+
+        for vector_text in vectors:
+
+            vector = parse_matrix(vector_text)
+
+            parsed[eigenvalue].append(vector)
 
     return parsed
