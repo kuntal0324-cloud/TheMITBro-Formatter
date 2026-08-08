@@ -24,12 +24,11 @@ A=
 $$
 
 **Correct Answer:**
-
 $$
 A^{-1}=
 \begin{bmatrix}
 \frac{3}{5} & -\frac{7}{10}\\
--\frac{1}{5} & \frac{1}{5}
+-\frac{1}{5} & \frac{2}{5}
 \end{bmatrix}
 $$
 
