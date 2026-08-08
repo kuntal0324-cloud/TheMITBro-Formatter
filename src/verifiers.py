@@ -151,6 +151,10 @@ def verify_inverse(question):
 
     return verify_single_matrix_operation(question, inverse)
 
+def verify_rref(question):
+
+    return verify_single_matrix_operation(question, rref)
+
 # -----------------------------------
 # Dispatcher
 # -----------------------------------
@@ -166,6 +170,7 @@ VERIFIERS = {
     TOPIC_TRANSPOSE: verify_transpose,
     TOPIC_INVERSE: verify_inverse,
     TOPIC_POWER: verify_power,
+    TOPIC_RREF: verify_rref,
 }
     
 def verify(question):
