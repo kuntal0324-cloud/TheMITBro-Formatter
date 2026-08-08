@@ -232,6 +232,40 @@ def expand_eigenvalues(eigenvalue_dict):
 
     return values
 
+def compare_eigenvectors(computed, expected):
+
+    computed_matrix = Matrix(computed)
+    expected_matrix = Matrix(expected)
+
+    if computed_matrix.shape != expected_matrix.shape:
+        return False
+
+    if computed_matrix.is_zero_matrix:
+        return expected_matrix.is_zero_matrix
+
+    ratios = []
+
+    for i in range(computed_matrix.rows):
+
+        c = computed_matrix[i, 0]
+        e = expected_matrix[i, 0]
+
+        if e == 0:
+            if c != 0:
+                return False
+        else:
+            ratios.append(c / e)
+
+    if not ratios:
+        return False
+
+    first_ratio = ratios[0]
+
+    return all(
+        simplify(ratio - first_ratio) == 0
+        for ratio in ratios
+    )
+
 # -----------------------------------
 # Dispatcher
 # -----------------------------------
