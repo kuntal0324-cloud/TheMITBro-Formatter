@@ -1,3 +1,5 @@
+from sympy import simplify
+
 from constants import *
 
 from matrix_engine import *
@@ -10,7 +12,20 @@ from parsers import *
 
 def compare_matrices(computed, expected):
 
-    return computed.tolist() == expected
+    if computed.shape != (len(expected), len(expected[0])):
+        return False
+
+    for i in range(computed.rows):
+        for j in range(computed.cols):
+
+            difference = simplify(
+                computed[i, j] - expected[i][j]
+            )
+
+            if difference != 0:
+                return False
+
+    return True
 
 def verify_numeric(question, solver):
 
