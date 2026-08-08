@@ -13,6 +13,6 @@ from verifiers import *
 if __name__ == "__main__":
 
     try:
-    print(parse_number("abc@@"))
-except Exception as e:
-    print("Invalid input handled:", type(e).__name__)
+        print(parse_number("abc@@"))
+    except Exception as e:
+        print("Invalid input handled:", type(e).__name__)
