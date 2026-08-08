@@ -124,3 +124,27 @@ def extract_power(question):
         return None
 
     return int(match.group(1))
+
+def extract_answer_matrices(question):
+
+    match = re.search(
+        r"\*\*Correct Answer:\*\*(.*?)(?:\*\*Concept Tested:\*\*|$)",
+        question,
+        flags=re.DOTALL
+    )
+
+    if not match:
+        return []
+
+    answer_section = match.group(1)
+
+    matches = re.findall(
+        r"\\begin{bmatrix}(.*?)\\end{bmatrix}",
+        answer_section,
+        flags=re.DOTALL
+    )
+
+    return [
+        parse_matrix(matrix_text)
+        for matrix_text in matches
+    ]
