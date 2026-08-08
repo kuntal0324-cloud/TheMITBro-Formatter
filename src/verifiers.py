@@ -27,6 +27,24 @@ def compare_matrices(computed, expected):
 
     return True
 
+def compare_matrix_lists(computed, expected):
+
+    if len(computed) != len(expected):
+        return False
+
+    for computed_matrix, expected_matrix in zip(
+        computed,
+        expected
+    ):
+
+        if not compare_matrices(
+            Matrix(computed_matrix),
+            expected_matrix
+        ):
+            return False
+
+    return True
+
 def matrix_comparison_details(computed, expected):
 
     if computed.shape != (len(expected), len(expected[0])):
@@ -154,6 +172,24 @@ def verify_inverse(question):
 def verify_rref(question):
 
     return verify_single_matrix_operation(question, rref)
+
+def verify_nullspace(question):
+
+    matrix = extract_matrix(question)
+
+    expected = extract_matrices(question)
+
+    computed = nullspace(matrix)
+
+    computed_vectors = [
+        vector.tolist()
+        for vector in computed
+    ]
+
+    return compare_matrix_lists(
+        computed_vectors,
+        expected
+    )
 
 # -----------------------------------
 # Dispatcher
