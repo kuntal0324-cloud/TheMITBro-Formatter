@@ -9,15 +9,15 @@ from verifiers import *
 # -----------------------------------
 # Testing
 # -----------------------------------
-    
+
 if __name__ == "__main__":
 
     matrix = Matrix([
-        [2, 0],
-        [0, 3]
-    ])
+    [2, 1],
+    [0, 2]
+])
 
-    result = eigenvalues(matrix)
+result = eigenvalues(matrix)
 
-    print("Raw:", result)
-    print("Expanded:", expand_eigenvalues(result))
+print("Raw:", result)
+print("Expanded:", expand_eigenvalues(result))
