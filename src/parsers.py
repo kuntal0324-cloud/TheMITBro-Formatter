@@ -205,6 +205,8 @@ def extract_characteristic_polynomial(question):
         flags=re.DOTALL
     )
 
+    print("Characteristic match:", match.group(1) if match else None)
+
     if not match:
         return None
 
@@ -219,6 +221,7 @@ def extract_characteristic_polynomial(question):
         implicit_multiplication,
         convert_xor
     )
+    
 
     transformations = (
         standard_transformations
