@@ -291,11 +291,27 @@ def verify_eigenvectors(question):
         computed_vectors = computed[eigenvalue]
         expected_vectors = expected[eigenvalue]
 
-        if not compare_matrix_lists(
-            computed_vectors,
-            expected_vectors
-        ):
+        if len(computed_vectors) != len(expected_vectors):
             return False
+
+        unmatched = list(expected_vectors)
+
+        for computed_vector in computed_vectors:
+
+            found = False
+
+            for i, expected_vector in enumerate(unmatched):
+
+                if compare_eigenvectors(
+                    computed_vector,
+                    expected_vector
+                ):
+                    unmatched.pop(i)
+                    found = True
+                    break
+
+            if not found:
+                return False
 
     return True
 
